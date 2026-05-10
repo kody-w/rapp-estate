@@ -25,6 +25,6 @@
   "private_estate_pointer": "https://github.com/kody-w/rapp-estate-private",
   "private_estate_commitment": "c87e38be4ef5bf4fae3dc416aec8640d06fc02adfd3e855bb19d4ad280fda432",
   "private_door_count": 0,
-  "minted_at": "2026-05-10T01:47:36Z",
+  "minted_at": "2026-05-10T01:54:31Z",
   "_note": "Network sniffers: this beacon confirms a public RAPP estate. Discovery via `gh search repos topic:rapp-estate`; this file validates each match. See https://raw.githubusercontent.com/kody-w/RAPP/main/CONSTITUTION.md (Article XLVII)."
 }
