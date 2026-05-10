@@ -1,0 +1,26 @@
+{
+  "schema": "rapp-network-beacon/1.0",
+  "operator_rappid": "rappid:v2:operator:@kody-w/kody-twin:91d006ca7bd052bfa5021d623122012f@github.com/kody-w/kody-twin",
+  "github": "kody-w",
+  "estate_url": "https://raw.githubusercontent.com/kody-w/rapp-estate/main/estate.json",
+  "estate_html_url": "https://kody-w.github.io/RAPP/",
+  "grail_url": "https://kody-w.github.io/rapp-estate/",
+  "protocol": {
+    "spec_version": "rapp-protocol/1.0",
+    "estate_schema": "rapp-estate/1.1",
+    "implements": [
+      "article-xlvi",
+      "article-xlvi.6",
+      "article-xlvii"
+    ],
+    "spec_url": "https://raw.githubusercontent.com/kody-w/RAPP/main/specs/SPEC.md"
+  },
+  "discovery": {
+    "indexable": true,
+    "consent": "public-discovery-ok",
+    "federation_hints": [],
+    "_note": "Set indexable=false to opt out of network sniffing. Honor like robots.txt."
+  },
+  "minted_at": "2026-05-10T00:40:19Z",
+  "_note": "Network sniffers: this beacon confirms a public RAPP estate. Discovery via `gh search repos topic:rapp-estate`; this file validates each match. See https://raw.githubusercontent.com/kody-w/RAPP/main/CONSTITUTION.md (Article XLVII)."
+}
