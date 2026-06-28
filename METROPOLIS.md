@@ -114,6 +114,8 @@ Field rules:
 - **`updated_at`** — UTC, RFC 3339, `Z`-suffixed. Used for staleness/offline-degrade decisions (§5).
 - **All timestamps MUST be UTC `Z`-suffixed** (UTC-first, §4).
 
+> **⚠ Spec vs. live emitter — rappids SHOULD migrate to canonical `rapp-eternity/1.0` form.** Every `rappid` above is shown in the **canonical target form** mandated by `rapp-eternity/1.0`: `rappid:@<owner>/<slug>:<64hex>`, where the suffix is a **256-bit sha256 content address** (never key-derived, never `uuid4`, never location-coupled). **This is the spec's required form, but it is not yet what the live emitter produces.** As of this writing the live `estate.json` (and the `rapp-map` crawl that caches it) still emit **legacy v2 ids — 32-hex, location-coupled** (the hash is entangled with the repo/path the node currently sits at, so moving the node would change the id). That violates the `rapp-eternity/1.0` invariant that identity is location-independent and the hash is the stable join key. Conformant nodes **SHOULD migrate to emit-canonical** `rappid:@owner/slug:64hex`; the 64-hex examples here describe the **destination, not the current on-disk reality.** Per the RAPP compatibility contract, readers MUST continue to **accept** legacy v2 32-hex ids forever (read-all-legacy-forms) while **emitting only** the canonical 64-hex form once migrated — identity is never rewritten in place; the content hash is the join key across both forms. Until the emitter is cut over, treat any 32-hex id encountered in a live beacon as a legacy id pending migration, not as a conformant rappid.
+
 ### 2.3 The metropolis crawl
 
 A metropolis crawler enumerates the graph by transitive closure over `member` edges:
@@ -137,7 +139,7 @@ Properties:
 - **Permissionless** — the crawl uses only public reads; no auth, no token, no central index.
 - **Decentralized** — there is no master list. `rapp-map` (the estate map) is a *convenience cache* of one crawl, not an authority. The authority is the live beacons.
 - **Convergent** — because edges are content-addressed by rappid and reads are idempotent, two crawlers from different seeds that reach the same estates produce the same subgraph.
-- **rappid-addressed** — every node and edge is named by a `rapp-eternity/1.0` rappid; the `estate_url` is a *hint* for where to fetch, the rappid is the *identity*. If a URL moves, the rappid is unchanged and the hash still verifies.
+- **rappid-addressed** — every node and edge is named by a `rapp-eternity/1.0` rappid; the `estate_url` is a *hint* for where to fetch, the rappid is the *identity*. If a URL moves, the rappid is unchanged and the hash still verifies. *(This location-independence is the property the canonical 64-hex form guarantees and the legacy 32-hex location-coupled form does not — see the migration note in §2.2.)*
 
 ---
 
@@ -283,6 +285,8 @@ An estate is **`rapp-metropolis/1.0`-conformant** iff **all** of the following h
 5. **Envelope fidelity.** Cross-node payloads are unmodified `rapp-neighborhood-protocol/1.0` §6 twin-chat events (§6). No new wire is introduced; `/chat` remains the only execution wire.
 6. **No central dependency.** Conformance requires no RAPP-operated server, registry, or relay — only the operator's own GitHub repo and atoms.
 
+> **Identity-emission note (migration in progress).** Full conformance targets canonical `rapp-eternity/1.0` rappids (`rappid:@owner/slug:64hex`, sha256, location-independent). The live emitter does **not** yet meet this — it still produces legacy v2 32-hex location-coupled ids (§2.2). Nodes **SHOULD migrate to emit-canonical**; readers MUST accept legacy forms in the interim (RAPP compatibility contract). This item is therefore a *known-open* migration, not a satisfied requirement — do not certify a node's identity emission as canonical until its `estate.json` actually emits 64-hex rappids.
+
 A metropolis is conformant iff every estate reachable in the crawl (§2.3) is individually conformant. There is no metropolis-level object to certify — conformance is purely the AND of its nodes.
 
 ---
@@ -352,7 +356,7 @@ When sources disagree about the metropolis state, trust in this order:
 - **estate** — one operator's full set, manifested in `estate.json` (`rapp-estate/1.1`); the unit of ownership.
 - **metropolis** — the transitive closure of discoverable estates over `member` edges; the unit of composition; owned by no one.
 - **beacon** — the well-known published `estate.json`.
-- **rappid** — `rapp-eternity/1.0` content-addressed sha256 identity (PKI-free; keypair optional).
+- **rappid** — `rapp-eternity/1.0` content-addressed sha256 identity (PKI-free; keypair optional). **Canonical form** is `rappid:@owner/slug:64hex` (location-independent); the live emitter still produces **legacy v2 32-hex location-coupled** ids pending migration to emit-canonical (§2.2).
 - **frame** — append-only, UTC-stamped, hash-linked record carrying a §6 envelope (`rapp-frame`-aligned).
 - **PR-consent** — membership granted by a gh-collaborator merging a PR; the default trust act.
 - **degraded** — a node whose host is offline but whose Pages snapshot still resolves.
