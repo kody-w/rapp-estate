@@ -210,17 +210,47 @@ function copy(elId, btn) {
   });
 }
 
-// Parse a v2 rappid into its semantic parts. Mirrors tools/door_address.py.
-function parseRappid(r) {
-  const re = /^rappid:v2:([a-z][a-z0-9-]*):@([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*):([a-f0-9]{32})@github\.com\/([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*)$/;
-  const m = re.exec(r);
-  if (!m) return null;
-  if (m[2] !== m[5] || m[3] !== m[6]) return null;
-  const kind = m[1], owner = m[2], repo = m[3];
-  const door_type = (kind === 'twin' || kind === 'operator') ? 'front_door' : 'gate';
+// Kinds that resolve to a front_door (single AI presence) per ESTATE_SPEC §1 /
+// CONSTITUTION Art. XLVI.2; everything else is a gate.
+const FRONT_DOOR_KINDS = new Set([
+  'twin', 'operator', 'personal', 'project', 'memorial',
+  'pre-founder', 'mirror', 'experiment', 'custom',
+]);
+
+// Parse a rappid into its semantic parts. Mirrors tools/door_address.py:
+// accepts the consolidated Eternity form rappid:@<owner>/<slug>:<64hex> (the only
+// minted form) AND read-forever-canonicalizes legacy v2 / bare-slug forms
+// (CONSTITUTION Art. XXXIV.1). `kind` lives in the rappid.json record, not the
+// string — pass `recordKind` (from the fetched record) to resolve door_type for
+// an Eternity rappid; legacy v2 carries kind inline. Never returns null for a
+// well-formed Eternity rappid (so rebuilt estates don't lose every door).
+function parseRappid(r, recordKind) {
+  if (typeof r !== 'string') return null;
+  let owner, repo, hash, kind = recordKind || null;
+
+  // 1. Consolidated Eternity form (the canonical, minted shape).
+  let m = /^rappid:@([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*):([a-f0-9]{64})$/.exec(r);
+  if (m) {
+    owner = m[1]; repo = m[2]; hash = m[3];
+  } else {
+    // 2. Legacy v2 (read-forever, canonicalize on read; kind is inline).
+    m = /^rappid:v2:([a-z][a-z0-9-]*):@([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*):([a-f0-9]{32})@github\.com\/([A-Za-z0-9][A-Za-z0-9._-]*)\/([A-Za-z0-9][A-Za-z0-9._-]*)$/.exec(r);
+    if (m) {
+      if (m[2] !== m[5] || m[3] !== m[6]) return null;
+      kind = kind || m[1]; owner = m[2]; repo = m[3]; hash = m[4];
+    } else {
+      return null; // genuinely malformed (bare slug-less UUID is not self-locating)
+    }
+  }
+
+  // door_type from the record kind; default to front_door (single presence) when
+  // the kind is not yet known (an Eternity rappid whose record hasn't been read).
+  const door_type = (kind == null || FRONT_DOOR_KINDS.has(kind)) ? 'front_door' : 'gate';
   const rawBase = `https://raw.githubusercontent.com/${owner}/${repo}/main`;
+  // Canonical Eternity display string (canonicalizes a legacy v2 input).
+  const canonical = `rappid:@${owner}/${repo}:${hash}`;
   return {
-    rappid: r, kind, owner, repo, door_type,
+    rappid: canonical, kind, owner, repo, hash, door_type,
     urls: {
       repo:      `https://github.com/${owner}/${repo}`,
       front:     `https://${owner}.github.io/${repo}/`,
@@ -236,7 +266,7 @@ function parseRappid(r) {
 }
 
 function doorCard(door) {
-  const cls = door.kind === 'twin' ? 'twin' : 'gate';
+  const cls = door.door_type === 'front_door' ? 'twin' : 'gate';
   return `
     <div class="card">
       <img class="holo" src="${door.urls.avatar}" alt="" loading="lazy" onerror="this.style.display='none'">
