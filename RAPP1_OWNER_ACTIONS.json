@@ -4,6 +4,11 @@
   "authoritative": false,
   "can_mint_reanchor_sign_or_accept": false,
   "authority_pin": "RAPP1_AUTHORITY.json",
+  "evidence_manifest": {
+    "file": "RAPP1_EVIDENCE.json",
+    "authoritative": false,
+    "can_promote_trust": false
+  },
   "blockers": [
     {
       "id": "rapp1-identity-authorization-and-registry",
@@ -52,6 +57,7 @@
   ],
   "prohibited_substitutes": [
     "A moving branch URL without a resolved commit and byte hash",
+    "A non-authoritative observation manifest presented as owner authorization",
     "A syntactically valid identifier without mint and authorization provenance",
     "A self-asserted migration field without an owner-signed re-anchor record",
     "An unsigned or stale registry candidate",

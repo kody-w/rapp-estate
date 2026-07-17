@@ -1,8 +1,9 @@
-# `METROPOLIS.md` — retired as a live specification
+# `METROPOLIS.md` — candidate retirement notice (not yet live)
 
-This path is retained as a fail-closed retirement notice. It does **not**
-publish a protocol, estate map, network beacon, registry, frame format, wire,
-or conformance claim.
+This candidate changes this path to a fail-closed retirement notice. It does
+**not** prove that the live `main`/Pages path has changed and does not publish
+a protocol, estate map, network beacon, registry, frame format, wire, or
+conformance claim.
 
 The former document is available only through git history at baseline commit
 `24c8fdc1e770c790b98724002d719d515d5e5465`. Its exact SHA-256 was
@@ -39,8 +40,16 @@ The machine-readable pin is
 
 The baseline identity claims were provisional and had no verifiable
 owner-signed re-anchor records in an authenticated, monotonic,
-freshness-checked section 13 registry. They were therefore removed from live
-publication rather than converted, re-minted, or inferred.
+freshness-checked section 13 registry. This candidate therefore removes them
+rather than converting, re-minting, or inferring them.
+
+## Deployment boundary
+
+The quarantine takes effect only when a reviewed commit containing these bytes
+reaches `main` and byte-matching responses are verified from both raw GitHub
+and GitHub Pages. Until then, the live path remains the baseline document.
+Deployment verification is intentionally still open; follow the unchecked
+checklist in [`RAPP1_STATUS.md`](RAPP1_STATUS.md).
 
 See [`RAPP1_STATUS.md`](RAPP1_STATUS.md) for the audit disposition and
 [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json) for the owner-only

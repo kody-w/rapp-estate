@@ -1,7 +1,7 @@
 {
   "document_type": "rapp-estate-publication-status",
   "accepted_as_estate_manifest": false,
-  "disposition": "quarantined",
+  "disposition": "candidate-quarantine",
   "repository": "kody-w/rapp-estate",
   "audit_date": "2026-07-17",
   "baseline": {
@@ -20,14 +20,17 @@
   },
   "historical_claims": {
     "availability": "git-history-only",
-    "baseline_identity_occurrences": 17,
+    "baseline_estate_identity_occurrences": 17,
+    "baseline_beacon_identity_occurrences": 1,
+    "baseline_total_provisional_emitted_occurrences": 18,
+    "distinct_baseline_identity_lookups": 17,
     "baseline_created_entries": 16,
     "baseline_membership_entries": 0,
     "public_lookups_resolved": 16,
     "distinct_public_repositories_resolved": 15,
     "non_public_or_unresolved_targets": 1
   },
-  "current_claims": {
+  "candidate_claims": {
     "estate_owner_rappid": null,
     "identities": [],
     "memberships": [],
@@ -42,11 +45,24 @@
     "accepted_identity_set": null,
     "registry_evidence": null
   },
+  "evidence": {
+    "file": "RAPP1_EVIDENCE.json",
+    "authoritative": false,
+    "trust_promotion": false
+  },
   "roles": {
     "protocol_authority": false,
     "router": false,
     "mirror": "status-only",
     "subordinate_to": "kody-w/RAPP"
+  },
+  "deployment": {
+    "state": "pending-review-publish-and-live-verification",
+    "quarantine_effective_only_when": "The quarantine takes effect only when a reviewed commit containing these bytes reaches main and byte-matching responses are verified from both raw GitHub and GitHub Pages.",
+    "live_deployment_verified": false,
+    "verified_commit": null,
+    "verified_at": null,
+    "checklist": "RAPP1_STATUS.md#live-deployment-verification-checklist"
   },
   "freshness": {
     "moving_branch_is_provenance": false,
