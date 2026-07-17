@@ -1,91 +1,55 @@
 {
-  "schema": "rapp-estate/1.1",
-  "owner": {
-    "rappid": "rappid:v2:operator:@kody-w/kody-twin:91d006ca7bd052bfa5021d623122012f@github.com/kody-w/kody-twin",
-    "github": "kody-w"
+  "document_type": "rapp-estate-publication-status",
+  "accepted_as_estate_manifest": false,
+  "disposition": "quarantined",
+  "repository": "kody-w/rapp-estate",
+  "audit_date": "2026-07-17",
+  "baseline": {
+    "commit": "24c8fdc1e770c790b98724002d719d515d5e5465",
+    "tracked_files": 5,
+    "archives": 0
   },
-  "created": [
-    {
-      "rappid": "rappid:v2:twin:@kody-w/echo-brainstem:15461d6259ec49bdaf8ea032571b3f03@github.com/kody-w/echo-brainstem",
-      "added_at": "2026-05-09T23:34:15Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/kody-twin:91d006ca7bd052bfa5021d623122012f@github.com/kody-w/kody-twin",
-      "added_at": "2026-05-09T23:34:24Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/lumen-brainstem:d037f1f8b3a643b7b0725f3d4b165663@github.com/kody-w/lumen-brainstem",
-      "added_at": "2026-05-09T23:34:28Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/microsoft-se-team-neighborhood:869ea057475547ec80df54551ecf8581@github.com/kody-w/microsoft-se-team-neighborhood",
-      "added_at": "2026-05-09T23:34:31Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/pkstop-central-park-bandshell:ae606a83b4e3335c9809fe2556b541a4@github.com/kody-w/pkstop-central-park-bandshell",
-      "added_at": "2026-05-09T23:34:38Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/pkstop-national-mall:6e6ba48a358226aeb175c88ecf1c9650@github.com/kody-w/pkstop-national-mall",
-      "added_at": "2026-05-09T23:34:38Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/pkstop-pike-place-market:6064ded7949da51eda107e6aee8833a7@github.com/kody-w/pkstop-pike-place-market",
-      "added_at": "2026-05-09T23:34:38Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/pkstop-santa-monica-pier:0173031e11cf38eb2838e2ee63059a96@github.com/kody-w/pkstop-santa-monica-pier",
-      "added_at": "2026-05-09T23:34:39Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/pkstop-the-bean:2ace341261be2838c1050f042860fe01@github.com/kody-w/pkstop-the-bean",
-      "added_at": "2026-05-09T23:34:39Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/rapp-test-neighbor:f6df0efd02eb7fdba08b58ad3b82466f@github.com/kody-w/rapp-test-neighbor",
-      "added_at": "2026-05-09T23:34:45Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:neighborhood:@kody-w/sim-art-collective:c2a305e8c3785f0eb2d90c75531e8ebb@github.com/kody-w/sim-art-collective",
-      "added_at": "2026-05-09T23:35:00Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/sim-demo-twin:9dc2a6dcf24e44508b91600a4f1cca8f@github.com/kody-w/sim-demo-twin",
-      "added_at": "2026-05-09T23:35:01Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/tide-brainstem:38811e658ee04b9195b749501a8ed0a7@github.com/kody-w/tide-brainstem",
-      "added_at": "2026-05-09T23:35:04Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/twin:257afa7958982c28258c1d97701182b1@github.com/kody-w/twin",
-      "added_at": "2026-05-09T23:35:05Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/twin-private:c26b739c83f872767d5bd56c46fc9953@github.com/kody-w/twin-private",
-      "added_at": "2026-05-09T23:35:06Z",
-      "via": "rebuild"
-    },
-    {
-      "rappid": "rappid:v2:twin:@kody-w/wildhaven-ai-homes-twin:33b9888874d14e7f17bb9263b378903a@github.com/kody-w/wildhaven-ai-homes-twin",
-      "added_at": "2026-05-09T23:35:10Z",
-      "via": "rebuild"
-    }
-  ],
-  "member": [],
-  "updated_at": "2026-05-09T23:35:12Z"
+  "authority": {
+    "repository": "kody-w/rapp-1",
+    "commit": "6723c7add2aed36bb68992fc71a56b0a4bd5ad81",
+    "spec_path": "SPEC.md",
+    "spec_status": "Draft standard for ratification",
+    "raw_url": "https://raw.githubusercontent.com/kody-w/rapp-1/6723c7add2aed36bb68992fc71a56b0a4bd5ad81/SPEC.md",
+    "bytes": 41880,
+    "sha256": "6d06daba65d7c045716f3d6e95db8401ab58e727820e4114466d847f62cae49b"
+  },
+  "historical_claims": {
+    "availability": "git-history-only",
+    "baseline_identity_occurrences": 17,
+    "baseline_created_entries": 16,
+    "baseline_membership_entries": 0,
+    "public_lookups_resolved": 16,
+    "distinct_public_repositories_resolved": 15,
+    "non_public_or_unresolved_targets": 1
+  },
+  "current_claims": {
+    "estate_owner_rappid": null,
+    "identities": [],
+    "memberships": [],
+    "frames": [],
+    "wire_endpoints": [],
+    "authenticated_registry": null
+  },
+  "owner_action": {
+    "state": "external-action-required",
+    "file": "RAPP1_OWNER_ACTIONS.json",
+    "owner_decision": null,
+    "accepted_identity_set": null,
+    "registry_evidence": null
+  },
+  "roles": {
+    "protocol_authority": false,
+    "router": false,
+    "mirror": "status-only",
+    "subordinate_to": "kody-w/RAPP"
+  },
+  "freshness": {
+    "moving_branch_is_provenance": false,
+    "consumer_requirement": "Resolve and pin the serving git commit before using this status as evidence."
+  }
 }

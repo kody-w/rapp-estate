@@ -1,30 +1,36 @@
 {
-  "schema": "rapp-network-beacon/1.1",
-  "operator_rappid": "rappid:v2:operator:@kody-w/kody-twin:91d006ca7bd052bfa5021d623122012f@github.com/kody-w/kody-twin",
-  "github": "kody-w",
-  "estate_url": "https://raw.githubusercontent.com/kody-w/rapp-estate/main/estate.json",
-  "estate_html_url": "https://kody-w.github.io/RAPP/",
-  "grail_url": "https://kody-w.github.io/rapp-estate/",
-  "protocol": {
-    "spec_version": "rapp-protocol/1.0",
-    "estate_schema": "rapp-estate/1.1",
-    "implements": [
-      "article-xlvi",
-      "article-xlvi.6",
-      "article-xlvii",
-      "article-xlviii"
-    ],
-    "spec_url": "https://raw.githubusercontent.com/kody-w/RAPP/main/specs/SPEC.md"
+  "document_type": "rapp-network-publication-status",
+  "accepted_as_network_beacon": false,
+  "disposition": "quarantined",
+  "indexable": false,
+  "repository": "kody-w/rapp-estate",
+  "status_path": "/rapp-estate/RAPP1_STATUS.md",
+  "estate_status_path": "/rapp-estate/estate.json",
+  "authority": {
+    "repository": "kody-w/rapp-1",
+    "commit": "6723c7add2aed36bb68992fc71a56b0a4bd5ad81",
+    "spec_path": "SPEC.md",
+    "raw_url": "https://raw.githubusercontent.com/kody-w/rapp-1/6723c7add2aed36bb68992fc71a56b0a4bd5ad81/SPEC.md",
+    "bytes": 41880,
+    "sha256": "6d06daba65d7c045716f3d6e95db8401ab58e727820e4114466d847f62cae49b"
   },
-  "discovery": {
-    "indexable": true,
-    "consent": "public-discovery-ok",
-    "federation_hints": [],
-    "_note": "Set indexable=false to opt out of network sniffing. Honor like robots.txt."
+  "current_claims": {
+    "operator_rappid": null,
+    "estate_manifest": null,
+    "memberships": [],
+    "frames": [],
+    "wire_endpoints": [],
+    "authenticated_registry": null
   },
-  "private_estate_pointer": "https://github.com/kody-w/rapp-estate-private",
-  "private_estate_commitment": "c87e38be4ef5bf4fae3dc416aec8640d06fc02adfd3e855bb19d4ad280fda432",
-  "private_door_count": 0,
-  "minted_at": "2026-05-10T01:54:31Z",
-  "_note": "Network sniffers: this beacon confirms a public RAPP estate. Discovery via `gh search repos topic:rapp-estate`; this file validates each match. See https://raw.githubusercontent.com/kody-w/RAPP/main/CONSTITUTION.md (Article XLVII)."
+  "owner_action": {
+    "state": "external-action-required",
+    "file": "RAPP1_OWNER_ACTIONS.json",
+    "owner_decision": null,
+    "registry_evidence": null
+  },
+  "freshness": {
+    "status_date": "2026-07-17",
+    "moving_branch_is_provenance": false,
+    "consumer_requirement": "Resolve and pin the serving git commit before using this status as evidence."
+  }
 }
