@@ -15,14 +15,14 @@ Those historical bytes are not reproduced here.
 The normative RAPP/1 authority for this repository is:
 
 - repository: `kody-w/rapp-1`
-- commit: `6723c7add2aed36bb68992fc71a56b0a4bd5ad81`
+- commit: `d2cd5abed48d3f52b86bbb975ac3558286d1db41`
 - path: `SPEC.md`
 - document status: **Draft standard for ratification (rev-5)**
-- bytes: `41880`
+- bytes: `41952`
 - SHA-256:
-  `6d06daba65d7c045716f3d6e95db8401ab58e727820e4114466d847f62cae49b`
+  `cea7847f98f9751734995f46fd4e1bde211c8eb9d03dbbb477934213865bb91a`
 - immutable source:
-  <https://raw.githubusercontent.com/kody-w/rapp-1/6723c7add2aed36bb68992fc71a56b0a4bd5ad81/SPEC.md>
+  <https://raw.githubusercontent.com/kody-w/rapp-1/d2cd5abed48d3f52b86bbb975ac3558286d1db41/SPEC.md>
 
 The machine-readable pin is
 [`RAPP1_AUTHORITY.json`](RAPP1_AUTHORITY.json).

@@ -15,8 +15,8 @@ import urllib.request
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE = "24c8fdc1e770c790b98724002d719d515d5e5465"
-AUTHORITY_COMMIT = "6723c7add2aed36bb68992fc71a56b0a4bd5ad81"
-AUTHORITY_SHA256 = "6d06daba65d7c045716f3d6e95db8401ab58e727820e4114466d847f62cae49b"
+AUTHORITY_COMMIT = "d2cd5abed48d3f52b86bbb975ac3558286d1db41"
+AUTHORITY_SHA256 = "cea7847f98f9751734995f46fd4e1bde211c8eb9d03dbbb477934213865bb91a"
 DEPLOYMENT_STATE = "pending-review-publish-and-live-verification"
 COMMIT_RE = re.compile(r"^[0-9a-f]{40}$")
 SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
@@ -295,7 +295,7 @@ def test_owner_actions(actions: dict[str, object]) -> None:
 
 def test_authority(pin: dict[str, object]) -> None:
     assert pin["commit"] == AUTHORITY_COMMIT
-    assert pin["bytes"] == 41880
+    assert pin["bytes"] == 41952
     assert pin["sha256"] == AUTHORITY_SHA256
     assert pin["authenticated_registry_acceptance"] is False
 
