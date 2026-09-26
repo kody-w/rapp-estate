@@ -88,7 +88,7 @@
         <strong>The publication is drafted.</strong> The estate kit writes the
         distributed Hive activation on the branch
         <code>experimental/rapp1-distributed-hive</code>, one commit per step
-        (the estate inventory (this step), the beacon, the release manifests and the LTS pins),
+        (the estate inventory, the beacon (this step), the release manifests and the LTS pins),
         following RAPP proposal 0020, a draft that the owner has not accepted.
         The branch is experimental: it has no pull request and nothing on it is
         merged.
@@ -116,6 +116,16 @@
       RAPP Hive's public copy <code>kody-w/rapp-hive-public</code> at commit
       <code>eafa6de</code>, pinned by the hash of its
       <a href="https://github.com/kody-w/rapp-hive-public/blob/eafa6de7e04a3d536c21976c1d85e845a499cd7b/PUBLISHED.md">PUBLISHED.md</a>.
+    </p>
+
+    <h2>Beacon (drafted)</h2>
+    <p>
+      <a href=".well-known/rapp-network.json">The beacon</a> is a
+      <code>rapp-network-beacon/1.1</code> with only the fields RAPP allows. It
+      names the estate-owner trust anchor, points at <code>estate.json</code>
+      at a full commit, says <code>indexable: true</code> because the operator
+      wants to be found, and carries the private-estate pointer with the
+      commitment this estate last published, which the owner re-verifies.
     </p>
 
     <h2>What the owner does</h2>

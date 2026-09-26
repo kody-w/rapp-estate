@@ -17,7 +17,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 # The draft is built in four steps, one commit each: 1 estate.json, 2 the beacon, 3 the release
 # manifests (which pin this repository at the beacon commit), 4 lts-pins.json.
-STAGE = 1
+STAGE = 2
 BASELINE = "24c8fdc1e770c790b98724002d719d515d5e5465"
 QUARANTINE_COMMIT = "acc17dca283619f288274f237c8c61f437d014f3"
 AUTHORITY_COMMIT = "d2cd5abed48d3f52b86bbb975ac3558286d1db41"
@@ -716,6 +716,10 @@ def test_status_pages() -> None:
         "without rewriting it (fast-forward or a merge commit, never a squash or a rebase)",
         "by then registry_seq 3 is published and covers the beacon, as D2 asks",
         "The publication is drafted in steps.",
+        "## The beacon (`.well-known/rapp-network.json`)",
+        "carried forward, not recomputed",
+        "compare its `computed_commitment` with this beacon's value",
+        "Both are `null` on RAPP `main` today",
     ):
         assert phrase in current, phrase
     for manifest_hash in RELEASES:
@@ -732,6 +736,7 @@ def test_status_pages() -> None:
         "registry_seq 3",
         "Estate inventory (drafted)",
         "History: the 2026-07-17 quarantine",
+        "Beacon (drafted)",
     ):
         assert phrase in html_text, phrase
     for forbidden in (

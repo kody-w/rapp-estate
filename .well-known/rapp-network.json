@@ -1,49 +1,26 @@
 {
-  "document_type": "rapp-network-publication-status",
-  "accepted_as_network_beacon": false,
-  "disposition": "candidate-quarantine",
-  "indexable": false,
-  "repository": "kody-w/rapp-estate",
-  "status_path": "/rapp-estate/RAPP1_STATUS.md",
-  "estate_status_path": "/rapp-estate/estate.json",
-  "authority": {
-    "repository": "kody-w/rapp-1",
-    "commit": "d2cd5abed48d3f52b86bbb975ac3558286d1db41",
-    "spec_path": "SPEC.md",
-    "raw_url": "https://raw.githubusercontent.com/kody-w/rapp-1/d2cd5abed48d3f52b86bbb975ac3558286d1db41/SPEC.md",
-    "bytes": 41952,
-    "sha256": "cea7847f98f9751734995f46fd4e1bde211c8eb9d03dbbb477934213865bb91a"
+  "schema": "rapp-network-beacon/1.1",
+  "operator_rappid": "rappid:@kody-w/estate-owner:b5814e45e9988df835dfd58d152a6fb05b6510a087a35c24374a1c4ab833c122",
+  "github": "kody-w",
+  "estate_url": "https://raw.githubusercontent.com/kody-w/rapp-estate/bb2b9cedea05e24d10c986d8a652486946876000/estate.json",
+  "grail_url": "https://kody-w.github.io/rapp-estate/",
+  "protocol": {
+    "spec_version": "rapp/1",
+    "estate_schema": "rapp-estate/1.1",
+    "implements": [
+      "article-xlvi",
+      "article-xlvii",
+      "article-xlviii"
+    ],
+    "spec_url": "https://raw.githubusercontent.com/kody-w/rapp-1/d2cd5abed48d3f52b86bbb975ac3558286d1db41/SPEC.md"
   },
-  "candidate_claims": {
-    "operator_rappid": null,
-    "estate_manifest": null,
-    "memberships": [],
-    "frames": [],
-    "wire_endpoints": [],
-    "authenticated_registry": null
+  "discovery": {
+    "indexable": true,
+    "consent": "public-discovery-ok",
+    "federation_hints": []
   },
-  "owner_action": {
-    "state": "external-action-required",
-    "file": "RAPP1_OWNER_ACTIONS.json",
-    "owner_decision": null,
-    "registry_evidence": null
-  },
-  "evidence": {
-    "file": "RAPP1_EVIDENCE.json",
-    "authoritative": false,
-    "trust_promotion": false
-  },
-  "deployment": {
-    "state": "pending-review-publish-and-live-verification",
-    "quarantine_effective_only_when": "The quarantine takes effect only when a reviewed commit containing these bytes reaches main and byte-matching responses are verified from both raw GitHub and GitHub Pages.",
-    "live_deployment_verified": false,
-    "verified_commit": null,
-    "verified_at": null,
-    "checklist": "RAPP1_STATUS.md#live-deployment-verification-checklist"
-  },
-  "freshness": {
-    "status_date": "2026-07-17",
-    "moving_branch_is_provenance": false,
-    "consumer_requirement": "Resolve and pin the serving git commit before using this status as evidence."
-  }
+  "private_estate_pointer": "https://github.com/kody-w/rapp-estate-private",
+  "private_estate_commitment": "c87e38be4ef5bf4fae3dc416aec8640d06fc02adfd3e855bb19d4ad280fda432",
+  "private_door_count": 0,
+  "minted_at": "2026-09-25T22:03:30Z"
 }

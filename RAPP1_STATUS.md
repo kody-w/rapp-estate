@@ -11,7 +11,7 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
   `experimental/rapp1-distributed-hive`, one commit per step, following RAPP
   proposal 0020 (a draft that the owner has not accepted; its Migration
   step 3 gives the estate kit `estate.json`, the beacon and the seed's pins).
-  This commit adds the estate inventory; the beacon, the release manifests and the LTS pins follow in the next
+  This commit adds the beacon; the release manifests and the LTS pins follow in the next
   commits of the branch. The branch is experimental: it has no pull request
   and nothing on it is merged.
 - **Nothing is signed.** No file in this repository carries a signature, and
@@ -67,14 +67,65 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
   `lts-pins.json` to the rest (proposal 0020, Migration step 5), the estate kit
   re-pins `hives[]` and every pin above it.
 
+## The beacon (`.well-known/rapp-network.json`)
+
+[`.well-known/rapp-network.json`](.well-known/rapp-network.json) is now a real
+`rapp-network-beacon/1.1` beacon (Articles XLVII and XLVIII), drafted and
+unsigned. It carries exactly the fields that RAPP's
+`pages/docs/PUBLIC_PRIVATE_BOUNDARY.md` §4.5 allows, and no other.
+
+- `operator_rappid` is the estate-owner trust anchor, the same rappid as
+  `estate.json` `owner.rappid`, and `github` is `kody-w`.
+- `estate_url` names `estate.json` on raw GitHub at the commit that wrote
+  this inventory (`bb2b9ce`). A sniffer lets the beacon's `estate_url` win over the
+  seed's, so the seed's moving `estate_url` changes nothing.
+- `grail_url` is this repository's GitHub Pages front door. Front doors stay
+  editable, so it is not pinned.
+- `protocol`: `spec_version` is `rapp/1` and `spec_url` is the RAPP/1 rev-5
+  authority that `RAPP1_AUTHORITY.json` pins. (The historical beacon named
+  `rapp-protocol/1.0` and RAPP's `specs/SPEC.md`, which RAPP now marks
+  superseded.) `estate_schema` is `rapp-estate/1.1`, and `implements` lists
+  `article-xlvi`, `article-xlvii` and `article-xlviii`. The historical beacon
+  also claimed `article-xlvi.6`; this draft does not, because XLVI.6 rebuilds
+  an estate from each door's `parent_rappid`, and no door here names the
+  operator as its parent.
+- `discovery`: `indexable: true`, because the operator wants to be found
+  (Article XLVII.3); `consent: "public-discovery-ok"`; no federation hints.
+- The Article XLVIII fields: `private_estate_pointer` is
+  `https://github.com/kody-w/rapp-estate-private`, the estate's private
+  repository. `private_estate_commitment`
+  (`c87e38be4ef5bf4fae3dc416aec8640d06fc02adfd3e855bb19d4ad280fda432`) and
+  `private_door_count` (`0`) are the values this estate last published in its
+  public beacon, in commits `445ff41` to `4287741` on 2026-05-10. They are
+  carried forward, not recomputed: nothing here reads the private estate. The
+  owner re-verifies the commitment with RAPP's own
+  `tools/private_estate_init.py --verify-commitment` (see below).
+- The beacon reaches the Hive root only through `estate.json` `hives[]`
+  (proposal 0020, D3), and it adds no field: there is no hash of
+  `estate.json` in it, because the commit in `estate_url` fixes those bytes.
+  The RAPP network seed is where the beacon gets pinned: its operator entry
+  has `reference_state.commit_pin` and `reference_state.sha256` for that.
+  Both are `null` on RAPP `main` today; the draft branch
+  `experimental/rapp1-network-seed-acceptance` in `kody-w/RAPP` fills them in
+  with this beacon's commit and SHA-256.
+
 ## How the draft was checked
 
 - `python3 tests/test_publication.py` passes at every commit of the draft. It
   re-implements RAPP/1 `canonical` and `H` with the Python standard library
   (as `rapp.canonical` and `rapp.H` define them in `kody-w/rapp-1` at
-  `65a35c1`) and checks the estate entry shape and the `hives[]` values, every commit-pinned URL,
+  `65a35c1`) and checks the estate entry shape and the `hives[]` values, and the exact beacon field set and its pinned `estate_url`, every commit-pinned URL,
   and that the historical record and evidence are unchanged. With `--online`
   it also refetches the pinned URLs and compares the bytes.
+- RAPP's `tools/sniff_network.py` (at `8afc973`) keeps this beacon: its schema
+  is one of the two beacon schemas it accepts, `door_from_rappid` accepts
+  `operator_rappid`, and `indexable` is true. It ran without touching the
+  network, twice: on a captured observation (`--source-data`, 30 door claims),
+  and as its breadth-first walk from a seed file on disk (the `file` substrate
+  of Article XLVII.5) whose operator entry points at a copy of this beacon
+  (`--online` with a reviewed source binding that allows only that folder).
+  The walk observed the operator and took the beacon's `estate_url` as the
+  estate to read. Every record said `accepted: false`.
 
 ## What the owner does
 
@@ -135,7 +186,7 @@ decision.
 | `RAPP1_AUTHORITY.json` | Exact RAPP/1 authority pin (rev-5) |
 | `RAPP1_EVIDENCE.json` | Non-authoritative 2026-07-17 lookup observations |
 | `estate.json` | `rapp-estate/1.1` inventory: 30 doors and one Hive root (drafted, unsigned) |
-| `.well-known/rapp-network.json` | Quarantine status document, as `main` carries it (the beacon comes in the next commit) |
+| `.well-known/rapp-network.json` | `rapp-network-beacon/1.1` beacon (drafted, unsigned) |
 | `METROPOLIS.md` | Retirement notice for the former metropolis document |
 | `tests/test_publication.py` | Offline checks; `--online` refetches the pinned evidence |
 | `.nojekyll` | GitHub Pages serves files literally |
