@@ -17,7 +17,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 # The draft is built in four steps, one commit each: 1 estate.json, 2 the beacon, 3 the release
 # manifests (which pin this repository at the beacon commit), 4 lts-pins.json.
-STAGE = 2
+STAGE = 3
 BASELINE = "24c8fdc1e770c790b98724002d719d515d5e5465"
 QUARANTINE_COMMIT = "acc17dca283619f288274f237c8c61f437d014f3"
 AUTHORITY_COMMIT = "d2cd5abed48d3f52b86bbb975ac3558286d1db41"
@@ -44,7 +44,26 @@ COMPONENT_MEMBERS = {
     "files",
 }
 FILE_MEMBERS = {"path", "sha256", "size_bytes"}
-RELEASES: dict[str, dict[str, object]] = {}
+RELEASES = {
+    "e3cc75de2ebdb36aa882edf2c2c1a50cfd2a8d93b916065e6c1046316bf60a87": {
+        "release": "rapp-1-lts-2026.09",
+        "release_scope": "https://kody-w.github.io/RAPP/releases/rapp-1-lts/brainstem-v0.6.9",
+        "channel": "rapp1-lts",
+        "kernel_ref": "refs/tags/brainstem-v0.6.9",
+        "components": 249,
+        "bytes": 79562,
+        "sha256": "ab3301b0e4d39fed19fdf4dddaba1a64e119ef9363f342044417d06f61407ad4",
+    },
+    "291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c": {
+        "release": "brainstem-v0.6.16",
+        "release_scope": "https://kody-w.github.io/RAPP/releases/brainstem-v0.6.16",
+        "channel": "newest",
+        "kernel_ref": "refs/tags/brainstem-v0.6.16",
+        "components": 310,
+        "bytes": 94060,
+        "sha256": "3473531d2bfc6efd849697564ab3b51ba32228c86b13ca9ca7833846ba42ae6a",
+    },
+}
 RELEASE_FILES = {f"releases/{manifest_hash}.json" for manifest_hash in RELEASES}
 CHANNEL_MANIFESTS = {
     release["channel"]: manifest_hash for manifest_hash, release in RELEASES.items()
@@ -720,6 +739,10 @@ def test_status_pages() -> None:
         "carried forward, not recomputed",
         "compare its `computed_commitment` with this beacon's value",
         "Both are `null` on RAPP `main` today",
+        "## Release manifests (candidate)",
+        "RAPP/1 rev-17 is a draft and not in force",
+        "registry_seq 3 covers the beacon.",
+        "A manifest never pins the commit that carries it",
     ):
         assert phrase in current, phrase
     for manifest_hash in RELEASES:
@@ -737,6 +760,8 @@ def test_status_pages() -> None:
         "Estate inventory (drafted)",
         "History: the 2026-07-17 quarantine",
         "Beacon (drafted)",
+        "Release manifests (candidate)",
+        "Its release pins cover this beacon",
     ):
         assert phrase in html_text, phrase
     for forbidden in (

@@ -11,7 +11,7 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
   `experimental/rapp1-distributed-hive`, one commit per step, following RAPP
   proposal 0020 (a draft that the owner has not accepted; its Migration
   step 3 gives the estate kit `estate.json`, the beacon and the seed's pins).
-  This commit adds the beacon; the release manifests and the LTS pins follow in the next
+  This commit adds the release manifests; the LTS pins follow in the next
   commits of the branch. The branch is experimental: it has no pull request
   and nothing on it is merged.
 - **Nothing is signed.** No file in this repository carries a signature, and
@@ -20,6 +20,13 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
 - **Network acceptance awaits the owner's signed registry**, the estate kit's
   registry_seq 3. Until the estate owner signs and publishes it, a consumer may
   read and hash-check these files but accepts none of them.
+- **registry_seq 3 covers the beacon.** Both release manifests pin this
+  repository at the beacon commit
+  `674776841610f9b4b1c23dafacc4314897a22e4c` (the beacon and
+  `estate.json`, by SHA-256 and length). Once the estate owner signs the
+  `release-pin` entries that name them, a verified entry of the estate's
+  signed registry covers the beacon: the condition RAPP proposal 0020 D2 sets
+  before the network seed accepts the operator.
 - **What `main` served before this draft.** `main` was the 2026-07-17
   quarantine status at commit `acc17dca283619f288274f237c8c61f437d014f3`. At
   21:49:30 UTC on 2026-09-25 every tracked path fetched from raw GitHub at
@@ -109,14 +116,45 @@ unsigned. It carries exactly the fields that RAPP's
   `experimental/rapp1-network-seed-acceptance` in `kody-w/RAPP` fills them in
   with this beacon's commit and SHA-256.
 
+## Release manifests (candidate)
+
+| File | Release | Channel | Components | Bytes | SHA-256 of the file |
+|---|---|---|---:|---:|---|
+| [`releases/e3cc75de2ebdb36aa882edf2c2c1a50cfd2a8d93b916065e6c1046316bf60a87.json`](releases/e3cc75de2ebdb36aa882edf2c2c1a50cfd2a8d93b916065e6c1046316bf60a87.json) | `rapp-1-lts-2026.09` | `rapp1-lts`, kernel `brainstem-v0.6.9` | 249 | 79562 | `ab3301b0e4d39fed19fdf4dddaba1a64e119ef9363f342044417d06f61407ad4` |
+| [`releases/291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c.json`](releases/291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c.json) | `brainstem-v0.6.16` | `newest`, kernel `brainstem-v0.6.16` | 310 | 94060 | `3473531d2bfc6efd849697564ab3b51ba32228c86b13ca9ca7833846ba42ae6a` |
+
+- Each file is a `rapp/1-release-manifest` and is exactly `canonical(manifest)`:
+  no whitespace and no line terminator. `.gitattributes` turns end-of-line
+  conversion off for `releases/*.json`, so git keeps and serves those bytes.
+- Each file's name is its `manifest_hash`, `H("rapp/1:particle", manifest)`,
+  as RAPP/1 rev-17 §13.5 defines it (`kody-w/rapp-1`, branch
+  `experimental/rapp1-core-rev17`, commit
+  `65a35c145a9a74c047f32661cde307158a913f77`, `rapp.H`).
+- Both pin this repository as the component `rapp-estate` (kind `estate`) at
+  the beacon commit `6747768`: `.well-known/rapp-network.json` and
+  `estate.json`, by SHA-256 and length. A manifest never pins the commit that
+  carries it, so the manifests come in the commit after the beacon.
+- They are **candidate**. RAPP/1 rev-17 is a draft and not in force, and a
+  manifest pins its release only after the estate owner signs a `release-pin`
+  entry that names its `manifest_hash` in the kody-w estate registry, together
+  with the `grail-kernel` entry of its release scope (each manifest has a
+  kernel component). The estate kit prepares those entries for
+  registry_seq 3.
+- To check them, run `python3 tests/test_publication.py`: it recomputes the
+  canonical form and the hash with the Python standard library. rapp-1's own
+  `rapp_registry.validate_release_manifest` (rev-17 draft, `65a35c1`) also
+  accepts both.
+
 ## How the draft was checked
 
 - `python3 tests/test_publication.py` passes at every commit of the draft. It
   re-implements RAPP/1 `canonical` and `H` with the Python standard library
   (as `rapp.canonical` and `rapp.H` define them in `kody-w/rapp-1` at
-  `65a35c1`) and checks the estate entry shape and the `hives[]` values, and the exact beacon field set and its pinned `estate_url`, every commit-pinned URL,
+  `65a35c1`) and checks the estate entry shape and the `hives[]` values, the exact beacon field set and its pinned `estate_url`, and the release files and their pin of this repository at the beacon commit, every commit-pinned URL,
   and that the historical record and evidence are unchanged. With `--online`
   it also refetches the pinned URLs and compares the bytes.
+- rapp-1's `rapp_registry.validate_release_manifest` accepts both manifests,
+  and `rapp.H` gives each file's name.
 - RAPP's `tools/sniff_network.py` (at `8afc973`) keeps this beacon: its schema
   is one of the two beacon schemas it accepts, `door_from_rappid` accepts
   `operator_rappid`, and `indexable` is true. It ran without touching the
@@ -185,10 +223,12 @@ decision.
 | `RAPP1_OWNER_ACTIONS.json` | Owner-only steps, with null owner inputs |
 | `RAPP1_AUTHORITY.json` | Exact RAPP/1 authority pin (rev-5) |
 | `RAPP1_EVIDENCE.json` | Non-authoritative 2026-07-17 lookup observations |
+| `releases/<manifest_hash>.json` | Candidate release manifests (rev-17 draft), exactly canonical |
 | `estate.json` | `rapp-estate/1.1` inventory: 30 doors and one Hive root (drafted, unsigned) |
 | `.well-known/rapp-network.json` | `rapp-network-beacon/1.1` beacon (drafted, unsigned) |
 | `METROPOLIS.md` | Retirement notice for the former metropolis document |
 | `tests/test_publication.py` | Offline checks; `--online` refetches the pinned evidence |
+| `.gitattributes` | Keeps `releases/*.json` byte-exact |
 | `.nojekyll` | GitHub Pages serves files literally |
 
 ## Historical record (kept as written)
