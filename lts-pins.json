@@ -22,7 +22,7 @@
       "manifest_hash": "b680cd69b365cdca2862855befc4926a92aed3f7d975015e9705909d29120a5d",
       "manifest": {
         "repository": "https://github.com/kody-w/rapp-estate",
-        "commit": "3bfc999d4fdf60af76b950236d308aa4766da61a",
+        "commit": "bc4993a4af7d48f4dd483659948de742079642e0",
         "path": "releases/b680cd69b365cdca2862855befc4926a92aed3f7d975015e9705909d29120a5d.json"
       },
       "kernel": {
@@ -44,7 +44,7 @@
       "manifest_hash": "0a3d5f61fa0568dca674dc86afc6c083bb8e5796b84e252dc3958fe6b04a60dd",
       "manifest": {
         "repository": "https://github.com/kody-w/rapp-estate",
-        "commit": "3bfc999d4fdf60af76b950236d308aa4766da61a",
+        "commit": "bc4993a4af7d48f4dd483659948de742079642e0",
         "path": "releases/0a3d5f61fa0568dca674dc86afc6c083bb8e5796b84e252dc3958fe6b04a60dd.json"
       },
       "kernel": {
