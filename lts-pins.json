@@ -160,7 +160,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
-      "newest_commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab"
+      "newest_commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
+      "proposed_lts_commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/dogg-canon": {
       "commit": "7bdae25ed8bdf0a6aa48789d9136c5ab4caca5e4",
@@ -240,7 +242,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
-      "newest_commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210"
+      "newest_commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
+      "proposed_lts_commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/heimdall": {
       "commit": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8",
@@ -260,7 +264,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8",
-      "newest_commit": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8"
+      "newest_commit": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8",
+      "proposed_lts_commit": "4faa05f741768a3fda22b5d7dc56ee2b7e68d245",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/hive-hub-join": {
       "commit": "7ae4e25832487a98db500c916b69ca68f3219cc4",
@@ -280,7 +286,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "7ae4e25832487a98db500c916b69ca68f3219cc4",
-      "newest_commit": "7ae4e25832487a98db500c916b69ca68f3219cc4"
+      "newest_commit": "7ae4e25832487a98db500c916b69ca68f3219cc4",
+      "proposed_lts_commit": "7ae4e25832487a98db500c916b69ca68f3219cc4",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/hive-hub-mcp": {
       "commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
@@ -300,7 +308,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
-      "newest_commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53"
+      "newest_commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
+      "proposed_lts_commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/hive-showcase": {
       "commit": "331fb28f09b203ef3671d9d18ac3c4e1689a5198",
@@ -643,7 +653,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "65a35c145a9a74c047f32661cde307158a913f77",
-      "newest_commit": "65a35c145a9a74c047f32661cde307158a913f77"
+      "newest_commit": "65a35c145a9a74c047f32661cde307158a913f77",
+      "proposed_lts_commit": "bae4e3cacc33e82e7fcf9fe73d2fd043da97801d",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-agents": {
       "commit": "3de844fc39195b8a73246f4f0598cb768b57ca05",
@@ -1389,7 +1401,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
-      "newest_commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16"
+      "newest_commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
+      "proposed_lts_commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-education-shorts": {
       "commit": "18e055ab978a61c1822cc224bacea07e01160d25",
@@ -1409,7 +1423,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "18e055ab978a61c1822cc224bacea07e01160d25",
-      "newest_commit": "18e055ab978a61c1822cc224bacea07e01160d25"
+      "newest_commit": "18e055ab978a61c1822cc224bacea07e01160d25",
+      "proposed_lts_commit": "18e055ab978a61c1822cc224bacea07e01160d25",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-estate": {
       "commit": "674776841610f9b4b1c23dafacc4314897a22e4c",
@@ -1530,7 +1546,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
-      "newest_commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9"
+      "newest_commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
+      "proposed_lts_commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-hive-hub-join": {
       "commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
@@ -1550,7 +1568,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
-      "newest_commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8"
+      "newest_commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
+      "proposed_lts_commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-hive-public": {
       "commit": "eafa6de7e04a3d536c21976c1d85e845a499cd7b",
@@ -1633,7 +1653,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
-      "newest_commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98"
+      "newest_commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
+      "proposed_lts_commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-kite": {
       "commit": "f3e7e2d04c30772d1abc0476da945a860fe226ab",
@@ -2099,7 +2121,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
-      "newest_commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4"
+      "newest_commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
+      "proposed_lts_commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-release-train": {
       "commit": "1f2b66af8b284bc656b7e9ab0ce6e9c491f514df",
@@ -2239,7 +2263,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
-      "newest_commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8"
+      "newest_commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
+      "proposed_lts_commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-sentinel": {
       "commit": "eebfa42dc8222a602d24d16c67e335955c6e7de2",
@@ -2621,7 +2647,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
-      "newest_commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b"
+      "newest_commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
+      "proposed_lts_commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-work-cubbies": {
       "commit": "6d9061348337da670821bdd7000767a9cc98af96",
@@ -2763,7 +2791,9 @@
       "lifecycle": "active",
       "superseded_by": null,
       "pointer_lts": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
-      "newest_commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0"
+      "newest_commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
+      "proposed_lts_commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/RAPPcards": {
       "commit": "5bfcea8d6aaa78e988827783b44e0d384ed3c14a",
@@ -3667,7 +3697,9 @@
       "superseded_by": null,
       "newest_commit": "d309e37d6c6732c6a48f31711cacf7deeef20a8a",
       "rappid_json": null,
-      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
+      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
+      "proposed_lts_commit": "d309e37d6c6732c6a48f31711cacf7deeef20a8a",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/CrystalRAPP": {
       "status": "certified",
@@ -3737,7 +3769,9 @@
       "superseded_by": null,
       "newest_commit": "2fd42239b7e2d8c68972f76ce9d487ccd579b685",
       "rappid_json": null,
-      "reason": "its README's release gate says the public 0.1.1 wheel does not yet have the documented `dial --from` path, and sends the reader to \"set up that preview\": the documented path is a preview until it is released"
+      "reason": "its README's release gate says the public 0.1.1 wheel does not yet have the documented `dial --from` path, and sends the reader to \"set up that preview\": the documented path is a preview until it is released",
+      "proposed_lts_commit": "2fd42239b7e2d8c68972f76ce9d487ccd579b685",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/homebrew-tap": {
       "status": "certified",
@@ -3757,7 +3791,9 @@
       "superseded_by": null,
       "newest_commit": "a5db2dbd07f8c0d6779d8cf5e3cd12d7df2d1e64",
       "rappid_json": null,
-      "reason": "its README calls it \"an R&D project\", and its linked runtimes \"experimental ports\": research projects live in the newest release until they graduate"
+      "reason": "its README calls it \"an R&D project\", and its linked runtimes \"experimental ports\": research projects live in the newest release until they graduate",
+      "proposed_lts_commit": "a5db2dbd07f8c0d6779d8cf5e3cd12d7df2d1e64",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/lisppy-shepherd": {
       "status": "certified",
@@ -3827,7 +3863,9 @@
       "superseded_by": null,
       "newest_commit": "3314302b1a9da5ed5d2e07d5e81cc3365a9b0442",
       "rappid_json": "rappid:@kody-w/rapp:9a8f0a4b5a710e20f4d819a0f37d2a4c9f113b5e78fb3c29e70b54fff48a38f9",
-      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
+      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
+      "proposed_lts_commit": "058c2f247938fd377fa9067254f0c4e834d7e1f7",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-ai": {
       "status": "certified",
@@ -4217,7 +4255,9 @@
       "superseded_by": null,
       "newest_commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
       "rappid_json": null,
-      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
+      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
+      "proposed_lts_commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-monorepo": {
       "status": "not yet",
@@ -4687,7 +4727,9 @@
       "superseded_by": null,
       "newest_commit": "c0b7950b404d27bed54b706d747bbe5a7e1ec494",
       "rappid_json": null,
-      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
+      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
+      "proposed_lts_commit": "c0b7950b404d27bed54b706d747bbe5a7e1ec494",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rappterbook": {
       "status": "not yet",
@@ -4927,7 +4969,9 @@
       "superseded_by": null,
       "newest_commit": "398c0fb247056c5653565d2fd8edf75bd1aeb4ce",
       "rappid_json": null,
-      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
+      "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
+      "proposed_lts_commit": "361fcb0df9a4ec657c1b44d662a88bf0e8c3d5ef",
+      "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/red-binder": {
       "status": "certified",
@@ -5028,6 +5072,122 @@
       "newest_commit": "395e97077ca79db965de01da2ef38644a29e1f2b",
       "rappid_json": "rappid:@kody-w/wildhaven-ai-homes-twin:df9c3f1f4b09d000720e93be4248d44213025ba5f76bf1180dc5d1ba0b0efd36",
       "reason": "ambiguous: its README says \"This is not yet a company\" (line 5) and, under \"What this repo is NOT\", \"**Not a product.** ... This repo is the brand operating before the service exists\" and \"**Not a finished company.**\" (lines 104-105): a pre-launch presence rather than a finished deliverable, though the twin itself is a working demonstration; the owner decides"
+    }
+  },
+  "card_lts_proposals": {
+    "note": "UNSIGNED proposal. Regenerated by `python3 -B kit/releases.py refresh-card-pins`; each commit is a current main commit resolved with gh and validated to contain `.rapp/member.md`. The public Hive keeps its existing pins until the owner signs a release that makes these real.",
+    "count": 22,
+    "pins": {
+      "kody-w/chat": {
+        "commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/cowork-cookbook-rapp": {
+        "commit": "d309e37d6c6732c6a48f31711cacf7deeef20a8a",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/echo-brainstem": {
+        "commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/heimdall": {
+        "commit": "4faa05f741768a3fda22b5d7dc56ee2b7e68d245",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/hive-hub": {
+        "commit": "2fd42239b7e2d8c68972f76ce9d487ccd579b685",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/hive-hub-join": {
+        "commit": "7ae4e25832487a98db500c916b69ca68f3219cc4",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/hive-hub-mcp": {
+        "commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/lisppy": {
+        "commit": "a5db2dbd07f8c0d6779d8cf5e3cd12d7df2d1e64",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/RAPP": {
+        "commit": "058c2f247938fd377fa9067254f0c4e834d7e1f7",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-1": {
+        "commit": "bae4e3cacc33e82e7fcf9fe73d2fd043da97801d",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-drift-lint": {
+        "commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-education-shorts": {
+        "commit": "18e055ab978a61c1822cc224bacea07e01160d25",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-hive-hub": {
+        "commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-hive-hub-join": {
+        "commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-keyring": {
+        "commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-model-hive": {
+        "commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-refresh": {
+        "commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-secondbrain": {
+        "commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rapp-work": {
+        "commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rappbook-admin": {
+        "commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/rappter-site": {
+        "commit": "c0b7950b404d27bed54b706d747bbe5a7e1ec494",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      },
+      "kody-w/RAR": {
+        "commit": "361fcb0df9a4ec657c1b44d662a88bf0e8c3d5ef",
+        "card_path": ".rapp/member.md",
+        "source": "gh main, validated .rapp/member.md"
+      }
     }
   }
 }
