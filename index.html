@@ -88,7 +88,7 @@
         <strong>The publication is drafted.</strong> The estate kit writes the
         distributed Hive activation on the branch
         <code>experimental/rapp1-distributed-hive</code>, one commit per step
-        (the estate inventory, the beacon, the release manifests and the LTS pins),
+        (the estate inventory, the beacon, the release manifests (this step) and the LTS pins),
         following RAPP proposal 0020, a draft that the owner has not accepted.
         The branch is experimental: it has no pull request and nothing on it is
         merged.
@@ -131,7 +131,7 @@
 
     <h2>Release manifests (candidate)</h2>
     <ul>
-      <li><a href="releases/0854e69761adb4b5641cbfe458eab27350329d61b3eae8c2eb579dfc98bd23bd.json"><code>rapp-1-lts-2026.09</code></a>: channel <code>rapp1-lts</code>, kernel <code>brainstem-v0.6.9</code>, 217 components.</li>
+      <li><a href="releases/506ded47f4e8a042b79829412d20ccc194a49bc25106284311977db20c118c95.json"><code>rapp-1-lts-2026.09</code></a>: channel <code>rapp1-lts</code>, kernel <code>brainstem-v0.6.9</code>, 176 components.</li>
       <li><a href="releases/291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c.json"><code>brainstem-v0.6.16</code></a>: channel <code>newest</code>, kernel <code>brainstem-v0.6.16</code>, 310 components.</li>
     </ul>
     <p>
@@ -141,14 +141,6 @@
       the beacon. They are candidate: RAPP/1 rev-17 is a draft and not in force,
       and a manifest pins its release only after the estate owner signs its
       <code>release-pin</code> entry.
-    </p>
-
-    <h2>LTS pins (candidate)</h2>
-    <p>
-      <a href="lts-pins.json">lts-pins.json</a> is prepared-unsigned: the LTS
-      commit of every repository in the LTS release, the repositories left out
-      of it with the reason, and a full-commit locator for each manifest. It
-      carries no authority of its own.
     </p>
 
     <h2>What the owner does</h2>
