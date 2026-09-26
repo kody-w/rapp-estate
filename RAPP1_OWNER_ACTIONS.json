@@ -58,24 +58,24 @@
       "id": "rapp1-distributed-hive-activation",
       "state": "open",
       "drafted_on_branch": "experimental/rapp1-distributed-hive",
-      "why": "The distributed Hive activation is drafted in this repository, following RAPP proposal 0020 (a draft that the owner has not accepted; its Migration step 3): a rapp-estate/1.1 inventory with one hives[] entry, a rapp-network-beacon/1.1 beacon, candidate release manifests that pin this repository at the beacon commit, and prepared-unsigned LTS pins. Nothing in it is signed. Network acceptance awaits the estate owner's signed registry: registry_seq 3 of the kody-w estate registry, which the estate kit prepares.",
+      "why": "The distributed Hive activation is drafted in this repository, following RAPP proposal 0020 (a draft that the owner has not accepted; its Migration step 3): a rapp-estate/1.1 inventory with one hives[] entry, a rapp-network-beacon/1.1 beacon, and candidate release manifests that pin this repository at the beacon commit (the prepared-unsigned LTS pins follow in the next commit). Nothing in it is signed. Network acceptance awaits the estate owner's signed registry: registry_seq 3 of the kody-w estate registry, which the estate kit prepares.",
       "first_blocker_note": "Blocker rapp1-identity-authorization-and-registry is kept as written on 2026-07-17. Since then the estate-owner rappid has been published out of band (kody-w/rapp-1 README, RAPP/1 section 13.1) and the kody-w registry has reached signed registry_seq 2. Whether this activation closes that blocker is the owner's decision.",
       "required_actions": [
         {
           "id": "verify-private-estate-commitment",
-          "action": "Run RAPP's tools/private_estate_init.py --handle kody-w --verify-commitment --online with a reviewed source binding and compare its computed_commitment with the beacon's private_estate_commitment, which is carried forward from the last published beacon. (Its matches field compares with the beacon on main, which carries no commitment until this branch is merged.) If they differ, or if the private estate's meta.json gives another private_door_count, the estate kit replaces the values, with their test, in new commits (a new beacon, new manifests that pin it), and the beacon is re-pinned in the RAPP seed. Only the owner can read the private estate."
-        },
-        {
-          "id": "sign-registry-seq-3",
-          "action": "Sign and publish registry_seq 3 of the kody-w estate registry (kody-w/rapp-map ecosystem-spec.json) with the estate-owner key, including the entries the release manifests need under RAPP/1 rev-17 section 13.5: one release-pin entry for each manifest_hash and one grail-kernel entry for each release scope, because both manifests carry a kernel component. Both manifests pin this repository at the beacon commit, so once registry_seq 3 verifies, a signed entry of the estate's registry covers the beacon (RAPP proposal 0020 D2). Only the estate owner can do this."
+          "action": "Before signing, run RAPP's tools/private_estate_init.py --handle kody-w --verify-commitment --online with a reviewed source binding and compare its computed_commitment with the beacon's private_estate_commitment, which is carried forward from the last published beacon. (Its matches field compares with the beacon on main, which carries no commitment until this branch is merged.) If they differ, or if the private estate's meta.json gives another private_door_count, the estate kit replaces the values, with their test, in new commits (a new beacon, new manifests that pin it), and the beacon is re-pinned in the RAPP seed. Only the owner can read the private estate."
         },
         {
           "id": "accept-proposal-0020",
-          "action": "Accept RAPP proposal 0020 (a draft on kody-w/RAPP experimental/proposal-0020-distributed-hive) with its decisions D2 and D3, or refuse it, before this branch is merged: this draft is its Migration step 3. If the owner refuses it or chooses other decisions, this branch is not merged as drafted: the estate kit redrafts the affected files in new commits, re-pins them and updates the tests. This draft adds no beacon field; it does not use the estate_sha256 field that D3 lists as an alternative."
+          "action": "Before signing, accept RAPP proposal 0020 (kody-w/RAPP pull request #133, from experimental/proposal-0020-distributed-hive) with its decisions D2 and D3, or refuse it: this draft is its Migration step 3, and the release manifests registry_seq 3 signs pin this draft's beacon and estate.json for good. The estate kit's sign command refuses until the proposal is accepted. If the owner refuses it or chooses other decisions, this branch is not merged as drafted: the estate kit redrafts the affected files in new commits, re-pins them and updates the tests. This draft adds no beacon field; it does not use the estate_sha256 field that D3 lists as an alternative."
+        },
+        {
+          "id": "sign-registry-seq-3",
+          "action": "Sign and publish registry_seq 3 of the kody-w estate registry (kody-w/rapp-map ecosystem-spec.json) with the estate-owner key, including the entries the release manifests need under RAPP/1 rev-17 section 13.5: one release-pin entry for each manifest_hash and one grail-kernel entry for each release scope, because both manifests carry a kernel component. Both manifests pin this repository at the beacon commit, so once registry_seq 3 verifies, a signed entry of the estate's registry covers the beacon (RAPP proposal 0020 D2). Before publishing, tag the commit the release pins name (the commit that carries both manifests), so it and the beacon commit before it stay reachable. Only the estate owner can do this."
         },
         {
           "id": "record-post-signing-status",
-          "action": "After registry_seq 3 is published and proposal 0020 is decided, have the estate kit add one status commit to this branch that records them (status words, owner inputs, tests) without changing any pinned file, so that main never states an older status than the truth."
+          "action": "After registry_seq 3 is published, have the estate kit add one status commit to this branch that records it and the owner's decision on proposal 0020 (status words, owner inputs, tests) without changing any pinned file, so that main never states an older status than the truth."
         },
         {
           "id": "merge-without-rewriting",

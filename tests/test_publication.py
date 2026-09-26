@@ -17,7 +17,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 # The draft is built in four steps, one commit each: 1 estate.json, 2 the beacon, 3 the release
 # manifests (which pin this repository at the beacon commit), 4 lts-pins.json.
-STAGE = 4
+STAGE = 3
 BASELINE = "24c8fdc1e770c790b98724002d719d515d5e5465"
 QUARANTINE_COMMIT = "acc17dca283619f288274f237c8c61f437d014f3"
 AUTHORITY_COMMIT = "d2cd5abed48d3f52b86bbb975ac3558286d1db41"
@@ -45,14 +45,14 @@ COMPONENT_MEMBERS = {
 }
 FILE_MEMBERS = {"path", "sha256", "size_bytes"}
 RELEASES = {
-    "e3cc75de2ebdb36aa882edf2c2c1a50cfd2a8d93b916065e6c1046316bf60a87": {
+    "6163b310659800fea34486baedc78f293156795ac3eadf4f5c1308c2a270f408": {
         "release": "rapp-1-lts-2026.09",
         "release_scope": "https://kody-w.github.io/RAPP/releases/rapp-1-lts/brainstem-v0.6.9",
         "channel": "rapp1-lts",
         "kernel_ref": "refs/tags/brainstem-v0.6.9",
-        "components": 249,
-        "bytes": 79562,
-        "sha256": "ab3301b0e4d39fed19fdf4dddaba1a64e119ef9363f342044417d06f61407ad4",
+        "components": 235,
+        "bytes": 76212,
+        "sha256": "bf17f1b4b53c5bd43d5bfc71fca762c67029f802f157498577f25b11fb073645",
     },
     "291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c": {
         "release": "brainstem-v0.6.16",
@@ -221,6 +221,12 @@ def adding_commits(path: str) -> list[str]:
         ["git", "-C", str(ROOT), "log", "--diff-filter=A", "--format=%H", "--", path],
         text=True,
     ).split()
+
+
+def is_ancestor(older: str, newer: str) -> bool:
+    return subprocess.run(
+        ["git", "-C", str(ROOT), "merge-base", "--is-ancestor", older, newer]
+    ).returncode == 0
 
 
 def last_commit(path: str) -> str:
@@ -442,7 +448,9 @@ def test_lts_pins(
         commit = locator["commit"]
         assert COMMIT_RE.fullmatch(commit), channel
         assert is_ancestor_of_head(commit), channel
-        assert adding_commits(path) == [commit], channel
+        # The locator is the commit that added the manifest or a later one that still carries it.
+        added = adding_commits(path)
+        assert len(added) == 1 and (added[0] == commit or is_ancestor(added[0], commit)), channel
         assert git_bytes(commit, path) == (ROOT / path).read_bytes(), channel
         kernel = next(
             c for c in manifests[manifest_hash]["components"] if c["kind"] == "kernel"
@@ -728,13 +736,13 @@ def test_status_pages() -> None:
         "## The estate inventory (`estate.json`)",
         "that RAPP proposal 0020 proposes",
         "## How the draft was checked",
-        "Accept RAPP proposal 0020 with its decisions D2 and D3, or refuse it.",
+        "Before signing, accept RAPP proposal 0020 (pull request #133) with its",
         "this branch is not merged as drafted",
         "a `grail-kernel` entry for each release scope",
         "Have the estate kit add one status commit",
         "without rewriting it (fast-forward or a merge commit, never a squash or a rebase)",
         "by then registry_seq 3 is published and covers the beacon, as D2 asks",
-        "The publication is drafted.",
+        "The publication is drafted in steps.",
         "## The beacon (`.well-known/rapp-network.json`)",
         "carried forward, not recomputed",
         "compare its `computed_commitment` with this beacon's value",
@@ -743,7 +751,6 @@ def test_status_pages() -> None:
         "RAPP/1 rev-17 is a draft and not in force",
         "registry_seq 3 covers the beacon.",
         "A manifest never pins the commit that carries it",
-        "## LTS pins (candidate, prepared-unsigned)",
     ):
         assert phrase in current, phrase
     for manifest_hash in RELEASES:
@@ -755,6 +762,7 @@ def test_status_pages() -> None:
         "Drafted — nothing is signed",
         "The publication is drafted.",
         "a draft that the owner has not accepted",
+        "Before signing, accept or refuse RAPP proposal 0020",
         "Nothing is signed.",
         "awaits the owner's signed registry",
         "registry_seq 3",
@@ -763,7 +771,6 @@ def test_status_pages() -> None:
         "Beacon (drafted)",
         "Release manifests (candidate)",
         "Its release pins cover this beacon",
-        "LTS pins (candidate)",
     ):
         assert phrase in html_text, phrase
     for forbidden in (
@@ -781,8 +788,8 @@ def test_status_pages() -> None:
 
 OWNER_ACTION_IDS = [
     "verify-private-estate-commitment",
-    "sign-registry-seq-3",
     "accept-proposal-0020",
+    "sign-registry-seq-3",
     "record-post-signing-status",
     "merge-without-rewriting",
     "accept-in-rapp-seed",
@@ -811,6 +818,8 @@ def test_owner_actions(actions: dict[str, object]) -> None:
     assert "grail-kernel entry for each release scope" in action["sign-registry-seq-3"]
     assert "covers the beacon" in action["sign-registry-seq-3"]
     assert "not merged as drafted" in action["accept-proposal-0020"]
+    assert action["accept-proposal-0020"].startswith("Before signing")
+    assert "tag the commit the release pins name" in action["sign-registry-seq-3"]
     assert action["merge-without-rewriting"].startswith(
         "Only after proposal 0020 is accepted with the recommended D2 and D3"
     )
