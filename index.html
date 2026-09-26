@@ -88,7 +88,7 @@
         <strong>The publication is drafted.</strong> The estate kit writes the
         distributed Hive activation on the branch
         <code>experimental/rapp1-distributed-hive</code>, one commit per step
-        (the estate inventory, the beacon, the release manifests (this step) and the LTS pins),
+        (the estate inventory, the beacon, the release manifests and the LTS pins),
         following RAPP proposal 0020, a draft that the owner has not accepted.
         The branch is experimental: it has no pull request and nothing on it is
         merged.
@@ -141,6 +141,14 @@
       the beacon. They are candidate: RAPP/1 rev-17 is a draft and not in force,
       and a manifest pins its release only after the estate owner signs its
       <code>release-pin</code> entry.
+    </p>
+
+    <h2>LTS pins (candidate)</h2>
+    <p>
+      <a href="lts-pins.json">lts-pins.json</a> is prepared-unsigned: the LTS
+      commit of every repository in the LTS release, the repositories left out
+      of it with the reason, and a full-commit locator for each manifest. It
+      carries no authority of its own.
     </p>
 
     <h2>What the owner does</h2>
