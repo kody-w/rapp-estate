@@ -58,7 +58,7 @@
       "id": "rapp1-distributed-hive-activation",
       "state": "open",
       "drafted_on_branch": "experimental/rapp1-distributed-hive",
-      "why": "The distributed Hive activation is drafted in this repository, following RAPP proposal 0020 (a draft that the owner has not accepted; its Migration step 3): a rapp-estate/1.1 inventory with one hives[] entry, a rapp-network-beacon/1.1 beacon, and candidate release manifests that pin this repository at the beacon commit (the prepared-unsigned LTS pins follow in the next commit). Nothing in it is signed. Network acceptance awaits the estate owner's signed registry: registry_seq 3 of the kody-w estate registry, which the estate kit prepares.",
+      "why": "The distributed Hive activation is drafted in this repository, following RAPP proposal 0020 (a draft that the owner has not accepted; its Migration step 3): a rapp-estate/1.1 inventory with one hives[] entry, a rapp-network-beacon/1.1 beacon, candidate release manifests that pin this repository at the beacon commit, and prepared-unsigned LTS pins. Nothing in it is signed. Network acceptance awaits the estate owner's signed registry: registry_seq 3 of the kody-w estate registry, which the estate kit prepares.",
       "first_blocker_note": "Blocker rapp1-identity-authorization-and-registry is kept as written on 2026-07-17. Since then the estate-owner rappid has been published out of band (kody-w/rapp-1 README, RAPP/1 section 13.1) and the kody-w registry has reached signed registry_seq 2. Whether this activation closes that blocker is the owner's decision.",
       "required_actions": [
         {

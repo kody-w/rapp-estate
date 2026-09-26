@@ -6,14 +6,13 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
 
 ## Where things stand on 2026-09-26
 
-- **The publication is drafted in steps.** The estate kit writes the
-  distributed Hive activation on the branch
-  `experimental/rapp1-distributed-hive`, one commit per step, following RAPP
-  proposal 0020 (a draft that the owner has not accepted; its Migration
+- **The publication is drafted.** The estate kit wrote the distributed Hive
+  activation on the branch `experimental/rapp1-distributed-hive`, one commit
+  per step (estate inventory, beacon, release manifests, LTS pins), following
+  RAPP proposal 0020 (a draft that the owner has not accepted; its Migration
   step 3 gives the estate kit `estate.json`, the beacon and the seed's pins).
-  This commit adds the release manifests; the LTS pins follow in the next
-  commits of the branch. The branch is experimental: it has no pull request
-  and nothing on it is merged.
+  The branch is experimental: it has no pull request and nothing on it is
+  merged.
 - **Nothing is signed.** No file in this repository carries a signature, and
   the kody-w estate registry (`kody-w/rapp-map`, `ecosystem-spec.json`, signed
   registry_seq 2 of 2026-09-02) has no entry for any file here.
@@ -52,7 +51,8 @@ machine-readably, in [`RAPP1_OWNER_ACTIONS.json`](RAPP1_OWNER_ACTIONS.json).
   2026-09-25T18:16:15Z (`crawl.finished_utc` of
   `portfolio/versions/2026-09-25-0/pulse.json`). No derived field is stored
   (XLVI.5). `member` is empty.
-- These 30 rappids are the stations' own valid `rappid.json` identities.
+- These 30 rappids are the stations' own valid `rappid.json` identities;
+  `lts-pins.json` lists each as `rappid_json`.
   A release manifest binds a rappid as a door of record only when the
   station's card (`.rapp/member.md`) states the same rappid at the pinned
   commit, and no station has a card at its pinned commit yet. This draft
@@ -145,12 +145,39 @@ unsigned. It carries exactly the fields that RAPP's
   `rapp_registry.validate_release_manifest` (rev-17 draft, `65a35c1`) also
   accepts both.
 
+## LTS pins (candidate, prepared-unsigned)
+
+[`lts-pins.json`](lts-pins.json) (`rapp1-lts-pins/1`, `status:
+"prepared-unsigned"`, `signed: false`) is the estate kit's template with
+exactly two values filled in: `channels.rapp1-lts.manifest.commit` and
+`channels.newest.manifest.commit` name the commit that added `releases/`, so
+each manifest can be fetched from raw GitHub at a full commit. Nothing else
+differs from the template, and the file keeps its format (two-space JSON with
+one final line feed).
+
+- `pins` gives the LTS commit of each of the 249 repositories in the LTS
+  manifest (with the release tag or version where the repository declares
+  one; the others are pinned by commit alone), and `not_in_lts` lists the
+  68 portfolio repositories that are not in the LTS, with the reason:
+  25 are `not yet` and stay in the newest channel; 1 is unchecked
+  and in neither release; 36 are certified stations that something flags
+  (their README, a pre-release ring, a pre-release tag or version, or no
+  README) and stay in the newest channel; and 6 are certified stations
+  whose README calls them deprecated, retired, archived, moved or superseded,
+  in neither release.
+- `channels.rapp1-lts.kernel` and `channels.newest.kernel` repeat the kernel
+  component of each manifest (`brainstem-v0.6.9` and `brainstem-v0.6.16`).
+- The pins are **candidate** (RAPP/1 rev-17 draft). The file's own note says
+  it carries no authority: the manifests, not this file, are what a verifier
+  checks, and a pin is the estate's only after the estate owner signs the
+  `release-pin` entry that names its manifest.
+
 ## How the draft was checked
 
 - `python3 tests/test_publication.py` passes at every commit of the draft. It
   re-implements RAPP/1 `canonical` and `H` with the Python standard library
   (as `rapp.canonical` and `rapp.H` define them in `kody-w/rapp-1` at
-  `65a35c1`) and checks the estate entry shape and the `hives[]` values, the exact beacon field set and its pinned `estate_url`, and the release files and their pin of this repository at the beacon commit, every commit-pinned URL,
+  `65a35c1`) and checks the estate entry shape and the `hives[]` values, the exact beacon field set and its pinned `estate_url`, the release files and their pin of this repository at the beacon commit, and the LTS pins, every commit-pinned URL,
   and that the historical record and evidence are unchanged. With `--online`
   it also refetches the pinned URLs and compares the bytes.
 - rapp-1's `rapp_registry.validate_release_manifest` accepts both manifests,
@@ -224,6 +251,7 @@ decision.
 | `RAPP1_AUTHORITY.json` | Exact RAPP/1 authority pin (rev-5) |
 | `RAPP1_EVIDENCE.json` | Non-authoritative 2026-07-17 lookup observations |
 | `releases/<manifest_hash>.json` | Candidate release manifests (rev-17 draft), exactly canonical |
+| `lts-pins.json` | Candidate LTS pins, prepared-unsigned, naming the manifests at a full commit |
 | `estate.json` | `rapp-estate/1.1` inventory: 30 doors and one Hive root (drafted, unsigned) |
 | `.well-known/rapp-network.json` | `rapp-network-beacon/1.1` beacon (drafted, unsigned) |
 | `METROPOLIS.md` | Retirement notice for the former metropolis document |

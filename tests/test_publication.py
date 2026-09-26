@@ -17,7 +17,7 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 # The draft is built in four steps, one commit each: 1 estate.json, 2 the beacon, 3 the release
 # manifests (which pin this repository at the beacon commit), 4 lts-pins.json.
-STAGE = 3
+STAGE = 4
 BASELINE = "24c8fdc1e770c790b98724002d719d515d5e5465"
 QUARANTINE_COMMIT = "acc17dca283619f288274f237c8c61f437d014f3"
 AUTHORITY_COMMIT = "d2cd5abed48d3f52b86bbb975ac3558286d1db41"
@@ -734,7 +734,7 @@ def test_status_pages() -> None:
         "Have the estate kit add one status commit",
         "without rewriting it (fast-forward or a merge commit, never a squash or a rebase)",
         "by then registry_seq 3 is published and covers the beacon, as D2 asks",
-        "The publication is drafted in steps.",
+        "The publication is drafted.",
         "## The beacon (`.well-known/rapp-network.json`)",
         "carried forward, not recomputed",
         "compare its `computed_commitment` with this beacon's value",
@@ -743,6 +743,7 @@ def test_status_pages() -> None:
         "RAPP/1 rev-17 is a draft and not in force",
         "registry_seq 3 covers the beacon.",
         "A manifest never pins the commit that carries it",
+        "## LTS pins (candidate, prepared-unsigned)",
     ):
         assert phrase in current, phrase
     for manifest_hash in RELEASES:
@@ -762,6 +763,7 @@ def test_status_pages() -> None:
         "Beacon (drafted)",
         "Release manifests (candidate)",
         "Its release pins cover this beacon",
+        "LTS pins (candidate)",
     ):
         assert phrase in html_text, phrase
     for forbidden in (
