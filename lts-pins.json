@@ -19,11 +19,11 @@
     "rapp1-lts": {
       "release": "rapp-1-lts-2026.09",
       "release_scope": "https://kody-w.github.io/RAPP/releases/rapp-1-lts/brainstem-v0.6.9",
-      "manifest_hash": "d0d3130dd3dbb6f25a11d07aee12834f8fcce1d5c18c4472e4bea39dbd1320f9",
+      "manifest_hash": "b680cd69b365cdca2862855befc4926a92aed3f7d975015e9705909d29120a5d",
       "manifest": {
         "repository": "https://github.com/kody-w/rapp-estate",
         "commit": "3bfc999d4fdf60af76b950236d308aa4766da61a",
-        "path": "releases/d0d3130dd3dbb6f25a11d07aee12834f8fcce1d5c18c4472e4bea39dbd1320f9.json"
+        "path": "releases/b680cd69b365cdca2862855befc4926a92aed3f7d975015e9705909d29120a5d.json"
       },
       "kernel": {
         "repository": "https://github.com/kody-w/rapp-installer",
@@ -36,16 +36,16 @@
           "rapp_brainstem/brainstem.py"
         ]
       },
-      "components": 175
+      "components": 176
     },
     "newest": {
       "release": "brainstem-v0.6.16",
       "release_scope": "https://kody-w.github.io/RAPP/releases/brainstem-v0.6.16",
-      "manifest_hash": "291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c",
+      "manifest_hash": "0a3d5f61fa0568dca674dc86afc6c083bb8e5796b84e252dc3958fe6b04a60dd",
       "manifest": {
         "repository": "https://github.com/kody-w/rapp-estate",
         "commit": "3bfc999d4fdf60af76b950236d308aa4766da61a",
-        "path": "releases/291dbe7955780a79a857869d96bd0c3405e5c7382c87e13fd40fcda8728c0a1c.json"
+        "path": "releases/0a3d5f61fa0568dca674dc86afc6c083bb8e5796b84e252dc3958fe6b04a60dd.json"
       },
       "kernel": {
         "repository": "https://github.com/kody-w/rapp-installer",
@@ -58,7 +58,7 @@
           "rapp_brainstem/brainstem.py"
         ]
       },
-      "components": 310
+      "components": 311
     }
   },
   "pins": {
@@ -143,7 +143,7 @@
       "newest_commit": "90779fba02ed0ad06ad892525d2f42852f535cdb"
     },
     "kody-w/chat": {
-      "commit": "3daf0fcaedd9772ddebe6ca31299d94d7a52b35a",
+      "commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
       "tag": null,
       "tags": [],
       "version": null,
@@ -159,8 +159,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "3daf0fcaedd9772ddebe6ca31299d94d7a52b35a",
-      "newest_commit": "3daf0fcaedd9772ddebe6ca31299d94d7a52b35a"
+      "pointer_lts": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab",
+      "newest_commit": "5882892bf7e1eccb82dcb095c0fbc33aadb60bab"
     },
     "kody-w/dogg-canon": {
       "commit": "7bdae25ed8bdf0a6aa48789d9136c5ab4caca5e4",
@@ -223,7 +223,7 @@
       "newest_commit": "53edf46c26ee9197fc2c17788d237aac0c6a2834"
     },
     "kody-w/echo-brainstem": {
-      "commit": "e9f5c4674c440e03b7a89e4bd06d134f377280c1",
+      "commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
       "tag": null,
       "tags": [],
       "version": null,
@@ -234,16 +234,16 @@
       ],
       "component": "echo-brainstem",
       "kind": "station",
-      "rappid": null,
+      "rappid": "rappid:@kody-w/echo-brainstem:16df01ceb939072e3732f5cf059b5b6d9cd227aa4dd040fd168536a2e3ba2e2d",
       "rappid_json": "rappid:@kody-w/echo-brainstem:16df01ceb939072e3732f5cf059b5b6d9cd227aa4dd040fd168536a2e3ba2e2d",
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "e9f5c4674c440e03b7a89e4bd06d134f377280c1",
-      "newest_commit": "e9f5c4674c440e03b7a89e4bd06d134f377280c1"
+      "pointer_lts": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210",
+      "newest_commit": "d90f6fdc5ed1a8f51adbc9269ee30a2542b4a210"
     },
     "kody-w/heimdall": {
-      "commit": "935cb5d410bf4caacdbba808dfcdb1e4e2a43dc7",
+      "commit": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8",
       "tag": null,
       "tags": [],
       "version": null,
@@ -254,16 +254,16 @@
       ],
       "component": "heimdall",
       "kind": "station",
-      "rappid": null,
+      "rappid": "rappid:@kody-w/heimdall:dd35328e3d58b5b6d27687a0d7bc9c5c4e4626e1899d75d8ea3311705e6f0ca6",
       "rappid_json": "rappid:@kody-w/heimdall:dd35328e3d58b5b6d27687a0d7bc9c5c4e4626e1899d75d8ea3311705e6f0ca6",
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "935cb5d410bf4caacdbba808dfcdb1e4e2a43dc7",
-      "newest_commit": "935cb5d410bf4caacdbba808dfcdb1e4e2a43dc7"
+      "pointer_lts": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8",
+      "newest_commit": "fb4571163e0a87bf7344e916a5f0b8226e56b3c8"
     },
     "kody-w/hive-hub-join": {
-      "commit": "ca3cfe8668e579da53b002e08fa002d30f0cdc0b",
+      "commit": "7ae4e25832487a98db500c916b69ca68f3219cc4",
       "tag": null,
       "tags": [],
       "version": null,
@@ -279,11 +279,11 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "ca3cfe8668e579da53b002e08fa002d30f0cdc0b",
-      "newest_commit": "ca3cfe8668e579da53b002e08fa002d30f0cdc0b"
+      "pointer_lts": "7ae4e25832487a98db500c916b69ca68f3219cc4",
+      "newest_commit": "7ae4e25832487a98db500c916b69ca68f3219cc4"
     },
     "kody-w/hive-hub-mcp": {
-      "commit": "b877a833829081f44af191f090d40937b2b1c063",
+      "commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
       "tag": null,
       "tags": [],
       "version": null,
@@ -299,8 +299,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "b877a833829081f44af191f090d40937b2b1c063",
-      "newest_commit": "b877a833829081f44af191f090d40937b2b1c063"
+      "pointer_lts": "312eedc5108a9ecbf182812ddec43c6a40db8d53",
+      "newest_commit": "312eedc5108a9ecbf182812ddec43c6a40db8d53"
     },
     "kody-w/hive-showcase": {
       "commit": "331fb28f09b203ef3671d9d18ac3c4e1689a5198",
@@ -1090,10 +1090,10 @@
       "newest_commit": "c689b44884930d8fefb4f6bb9acd2dff56f6a7b8"
     },
     "kody-w/rapp-brainstem-plugin": {
-      "commit": "1fb89ff2d6e47cc29ee09580278451e915da2577",
+      "commit": "aa3793e440a4a0e0711b96210b46adc9bdee507f",
       "tag": null,
       "tags": [],
-      "version": "0.2.0",
+      "version": "0.2.1",
       "version_source": "pyproject.toml",
       "spec_token": "rapp/1",
       "spec_tokens": [
@@ -1106,8 +1106,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "1fb89ff2d6e47cc29ee09580278451e915da2577",
-      "newest_commit": "1fb89ff2d6e47cc29ee09580278451e915da2577"
+      "pointer_lts": "aa3793e440a4a0e0711b96210b46adc9bdee507f",
+      "newest_commit": "aa3793e440a4a0e0711b96210b46adc9bdee507f"
     },
     "kody-w/rapp-brainstem-sdk": {
       "commit": "418fd69d76e8fc6a494782b669560f4212292fb5",
@@ -1228,6 +1228,26 @@
       "superseded_by": null,
       "pointer_lts": "d675bf06c4b51232833fb426ddcb7bc4079b4b6c",
       "newest_commit": "d675bf06c4b51232833fb426ddcb7bc4079b4b6c"
+    },
+    "kody-w/rapp-constitution": {
+      "commit": "ccaab0c61051bc362ab7a1fd2ec99fdbed23313c",
+      "tag": null,
+      "tags": [],
+      "version": null,
+      "version_source": null,
+      "spec_token": "rapp/1",
+      "spec_tokens": [
+        "rapp/1"
+      ],
+      "component": "rapp-constitution",
+      "kind": "protocol",
+      "rappid": null,
+      "rappid_json": null,
+      "channel": "rapp1-lts",
+      "lifecycle": "active",
+      "superseded_by": null,
+      "pointer_lts": "ccaab0c61051bc362ab7a1fd2ec99fdbed23313c",
+      "newest_commit": "ccaab0c61051bc362ab7a1fd2ec99fdbed23313c"
     },
     "kody-w/rapp-coop": {
       "commit": "d71893259a0ba23c5bd81bf157260cf662ddf198",
@@ -1352,7 +1372,7 @@
       "newest_commit": "bc9099eb3c79a59fb43a3a2ba7f5d3caec0df381"
     },
     "kody-w/rapp-drift-lint": {
-      "commit": "fccad3378df2ef3f16805e92b8bf35f3d40347a3",
+      "commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
       "tag": null,
       "tags": [],
       "version": null,
@@ -1368,11 +1388,11 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "fccad3378df2ef3f16805e92b8bf35f3d40347a3",
-      "newest_commit": "fccad3378df2ef3f16805e92b8bf35f3d40347a3"
+      "pointer_lts": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16",
+      "newest_commit": "92a97a1e913d48c9fdddc9bab1d9e21da6003c16"
     },
     "kody-w/rapp-education-shorts": {
-      "commit": "bbda5b7371f5e635b97d80dd62afaf191ec557e8",
+      "commit": "18e055ab978a61c1822cc224bacea07e01160d25",
       "tag": null,
       "tags": [],
       "version": null,
@@ -1388,8 +1408,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "bbda5b7371f5e635b97d80dd62afaf191ec557e8",
-      "newest_commit": "bbda5b7371f5e635b97d80dd62afaf191ec557e8"
+      "pointer_lts": "18e055ab978a61c1822cc224bacea07e01160d25",
+      "newest_commit": "18e055ab978a61c1822cc224bacea07e01160d25"
     },
     "kody-w/rapp-estate": {
       "commit": "674776841610f9b4b1c23dafacc4314897a22e4c",
@@ -1493,7 +1513,7 @@
       "newest_commit": "20880d5cd51b60c7fa4cc45b8744f69b457936b7"
     },
     "kody-w/rapp-hive-hub": {
-      "commit": "c1b37758529c5d4841840162b20be5020510bab0",
+      "commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
       "tag": null,
       "tags": [],
       "version": "0.1.1",
@@ -1509,11 +1529,11 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "c1b37758529c5d4841840162b20be5020510bab0",
-      "newest_commit": "c1b37758529c5d4841840162b20be5020510bab0"
+      "pointer_lts": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9",
+      "newest_commit": "1c154522dcc80a3ed3870e3c72bc430e6ed56bf9"
     },
     "kody-w/rapp-hive-hub-join": {
-      "commit": "24de83cfab2f74b92dd9338d4b3a2e36779bb9e1",
+      "commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
       "tag": null,
       "tags": [],
       "version": null,
@@ -1529,8 +1549,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "24de83cfab2f74b92dd9338d4b3a2e36779bb9e1",
-      "newest_commit": "24de83cfab2f74b92dd9338d4b3a2e36779bb9e1"
+      "pointer_lts": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8",
+      "newest_commit": "3598da15c3d5c4e6d6fbb79c2dd1f741b88df0b8"
     },
     "kody-w/rapp-hive-public": {
       "commit": "eafa6de7e04a3d536c21976c1d85e845a499cd7b",
@@ -1596,7 +1616,7 @@
       "newest_tag": "brainstem-v0.6.16"
     },
     "kody-w/rapp-keyring": {
-      "commit": "89386724e9bf8b365ce3bd2847fbcc06365953d5",
+      "commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
       "tag": null,
       "tags": [],
       "version": "0.1.0",
@@ -1612,8 +1632,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "89386724e9bf8b365ce3bd2847fbcc06365953d5",
-      "newest_commit": "89386724e9bf8b365ce3bd2847fbcc06365953d5"
+      "pointer_lts": "b7dac71e7730216ae4992ca7dcf349c8fa094c98",
+      "newest_commit": "b7dac71e7730216ae4992ca7dcf349c8fa094c98"
     },
     "kody-w/rapp-kite": {
       "commit": "f3e7e2d04c30772d1abc0476da945a860fe226ab",
@@ -1720,7 +1740,7 @@
       "newest_commit": "4743d74ce64d8e2d053140a837b34a2c04833c80"
     },
     "kody-w/rapp-mcp": {
-      "commit": "651ce8250b9569e890c03f6743f45a16675419c9",
+      "commit": "a6bb38ece34a012a1bc321df508edbe7adcbfbc5",
       "tag": null,
       "tags": [],
       "version": null,
@@ -1736,8 +1756,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "651ce8250b9569e890c03f6743f45a16675419c9",
-      "newest_commit": "651ce8250b9569e890c03f6743f45a16675419c9"
+      "pointer_lts": "a6bb38ece34a012a1bc321df508edbe7adcbfbc5",
+      "newest_commit": "a6bb38ece34a012a1bc321df508edbe7adcbfbc5"
     },
     "kody-w/rapp-membrane": {
       "commit": "62da93daa849624336dbfe162d3a0af24ceedd7a",
@@ -2062,11 +2082,9 @@
       "newest_commit": "187bff19c5dde13b88af0b1f0f45f116a36d4766"
     },
     "kody-w/rapp-refresh": {
-      "commit": "84cc9bb0f3684e22f22fab744ad496c2a3f35ab9",
-      "tag": "v1.0.0",
-      "tags": [
-        "v1.0.0"
-      ],
+      "commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
+      "tag": null,
+      "tags": [],
       "version": null,
       "version_source": null,
       "spec_token": "rapp/1",
@@ -2080,8 +2098,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "84cc9bb0f3684e22f22fab744ad496c2a3f35ab9",
-      "newest_commit": "84cc9bb0f3684e22f22fab744ad496c2a3f35ab9"
+      "pointer_lts": "920c3f4b72535136850b6c78ec4af79d5afe10c4",
+      "newest_commit": "920c3f4b72535136850b6c78ec4af79d5afe10c4"
     },
     "kody-w/rapp-release-train": {
       "commit": "1f2b66af8b284bc656b7e9ab0ce6e9c491f514df",
@@ -2204,7 +2222,7 @@
       "newest_commit": "c6e35c85428bd8761d2398ce172e14b22f9364c9"
     },
     "kody-w/rapp-secondbrain": {
-      "commit": "7846dfdd5e2c74ea2201e1b141269df359b4ce5a",
+      "commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
       "tag": null,
       "tags": [],
       "version": null,
@@ -2220,8 +2238,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "7846dfdd5e2c74ea2201e1b141269df359b4ce5a",
-      "newest_commit": "7846dfdd5e2c74ea2201e1b141269df359b4ce5a"
+      "pointer_lts": "23cf473db1958f87128e04f6d85e324c8b57a3c8",
+      "newest_commit": "23cf473db1958f87128e04f6d85e324c8b57a3c8"
     },
     "kody-w/rapp-sentinel": {
       "commit": "eebfa42dc8222a602d24d16c67e335955c6e7de2",
@@ -2364,7 +2382,7 @@
       "newest_commit": "b21ebe12b274c4404af916944f808303e7005a89"
     },
     "kody-w/rapp-static-apis": {
-      "commit": "6d0d094696187816f80cb7449528ac5cec373fdb",
+      "commit": "17919fb4ee20bfff89ae7f44fcf8a2fb3df0f2e5",
       "tag": null,
       "tags": [],
       "version": null,
@@ -2380,8 +2398,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "6d0d094696187816f80cb7449528ac5cec373fdb",
-      "newest_commit": "6d0d094696187816f80cb7449528ac5cec373fdb"
+      "pointer_lts": "17919fb4ee20bfff89ae7f44fcf8a2fb3df0f2e5",
+      "newest_commit": "17919fb4ee20bfff89ae7f44fcf8a2fb3df0f2e5"
     },
     "kody-w/rapp-static-brainstem": {
       "commit": "0173eb8ee0c8846dad9a93a938af077ca5acae43",
@@ -2586,7 +2604,7 @@
       "newest_commit": "ccccb5c786e8ae4e7123c39289bab367ad11a24d"
     },
     "kody-w/rapp-work": {
-      "commit": "29ead23b21645f8d7682ee00414930ffa9ce0ca6",
+      "commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
       "tag": null,
       "tags": [],
       "version": null,
@@ -2597,13 +2615,13 @@
       ],
       "component": "rapp-work",
       "kind": "protocol",
-      "rappid": null,
+      "rappid": "rappid:@kody-w/rapp-work:ff9049d3eed47a575b653676f39baa41c5c8ec572a381bec873383b9f2a4e6b9",
       "rappid_json": "rappid:@kody-w/rapp-work:ff9049d3eed47a575b653676f39baa41c5c8ec572a381bec873383b9f2a4e6b9",
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "29ead23b21645f8d7682ee00414930ffa9ce0ca6",
-      "newest_commit": "29ead23b21645f8d7682ee00414930ffa9ce0ca6"
+      "pointer_lts": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b",
+      "newest_commit": "4d1a5272eaa6c77f1efd4dbbebf01d5b3411260b"
     },
     "kody-w/rapp-work-cubbies": {
       "commit": "6d9061348337da670821bdd7000767a9cc98af96",
@@ -2728,7 +2746,7 @@
       "newest_commit": "36efba8f7ca381f7fa39b6b08e5a0f06aec1d946"
     },
     "kody-w/rappbook-admin": {
-      "commit": "33f9f0df373cbe37197d6292f5bc3fdd89027573",
+      "commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
       "tag": null,
       "tags": [],
       "version": "1.0.0",
@@ -2744,8 +2762,8 @@
       "channel": "rapp1-lts",
       "lifecycle": "active",
       "superseded_by": null,
-      "pointer_lts": "33f9f0df373cbe37197d6292f5bc3fdd89027573",
-      "newest_commit": "33f9f0df373cbe37197d6292f5bc3fdd89027573"
+      "pointer_lts": "13fe2506985f69b39f2e09a64f03827aab72ebd0",
+      "newest_commit": "13fe2506985f69b39f2e09a64f03827aab72ebd0"
     },
     "kody-w/RAPPcards": {
       "commit": "5bfcea8d6aaa78e988827783b44e0d384ed3c14a",
@@ -3647,7 +3665,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "2e2a3929c699cb6552ea8213c7a44f5a83acd389",
+      "newest_commit": "d309e37d6c6732c6a48f31711cacf7deeef20a8a",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
@@ -3717,7 +3735,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "23af8b5983311ecd34e3545e694c42d7492bc5be",
+      "newest_commit": "2fd42239b7e2d8c68972f76ce9d487ccd579b685",
       "rappid_json": null,
       "reason": "its README's release gate says the public 0.1.1 wheel does not yet have the documented `dial --from` path, and sends the reader to \"set up that preview\": the documented path is a preview until it is released"
     },
@@ -3737,7 +3755,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "addd6afc1a3362039d06459dcced8ef7406fcbbf",
+      "newest_commit": "a5db2dbd07f8c0d6779d8cf5e3cd12d7df2d1e64",
       "rappid_json": null,
       "reason": "its README calls it \"an R&D project\", and its linked runtimes \"experimental ports\": research projects live in the newest release until they graduate"
     },
@@ -3807,7 +3825,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "e045fc3acd5febf9423ad4a41510e467e0160d52",
+      "newest_commit": "3314302b1a9da5ed5d2e07d5e81cc3365a9b0442",
       "rappid_json": "rappid:@kody-w/rapp:9a8f0a4b5a710e20f4d819a0f37d2a4c9f113b5e78fb3c29e70b54fff48a38f9",
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
@@ -4167,7 +4185,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "81dd6f05ab0969d11253f3fe7f4834288824d17e",
+      "newest_commit": "ed5056cddcbe4eb2f3c3030c44d697bb4b4c8a6d",
       "rappid_json": "rappid:@kody-w/rapp-map:382422e0b322bec01c1f20af48a7f558e64c648f9dc82377fa5af14c8305d223",
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
@@ -4197,7 +4215,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "113b739e05c4975d0d59e19836d1714b87e9e1ab",
+      "newest_commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
@@ -4667,7 +4685,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "6ed01825d66b051ebfa4bc9a2e9e236bdff08cc3",
+      "newest_commit": "c0b7950b404d27bed54b706d747bbe5a7e1ec494",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
@@ -4907,7 +4925,7 @@
       "channel": "newest",
       "lifecycle": "active",
       "superseded_by": null,
-      "newest_commit": "e3031fc2d298763da0e4fe810772fc0493ef9eb0",
+      "newest_commit": "398c0fb247056c5653565d2fd8edf75bd1aeb4ce",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate"
     },
