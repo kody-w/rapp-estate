@@ -3864,7 +3864,7 @@
       "newest_commit": "3314302b1a9da5ed5d2e07d5e81cc3365a9b0442",
       "rappid_json": "rappid:@kody-w/rapp:9a8f0a4b5a710e20f4d819a0f37d2a4c9f113b5e78fb3c29e70b54fff48a38f9",
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
-      "proposed_lts_commit": "40647a2be1b32bec2ab7be05121d41c7461705ec",
+      "proposed_lts_commit": "3a8020f39d7814e6e028102c5f8596a5be6550dd",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-ai": {
@@ -4256,7 +4256,7 @@
       "newest_commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
-      "proposed_lts_commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
+      "proposed_lts_commit": "c88331a5b00a06769f662cec38c6541f2152d7d8",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-monorepo": {
@@ -5119,7 +5119,7 @@
         "source": "gh main, validated .rapp/member.md"
       },
       "kody-w/RAPP": {
-        "commit": "40647a2be1b32bec2ab7be05121d41c7461705ec",
+        "commit": "3a8020f39d7814e6e028102c5f8596a5be6550dd",
         "card_path": ".rapp/member.md",
         "source": "gh main, validated .rapp/member.md"
       },
@@ -5154,7 +5154,7 @@
         "source": "gh main, validated .rapp/member.md"
       },
       "kody-w/rapp-model-hive": {
-        "commit": "1bda54dd577feea2a28db59dfb2cc8461fa7f660",
+        "commit": "c88331a5b00a06769f662cec38c6541f2152d7d8",
         "card_path": ".rapp/member.md",
         "source": "gh main, validated .rapp/member.md"
       },
