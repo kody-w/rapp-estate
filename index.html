@@ -7,10 +7,10 @@
     http-equiv="Content-Security-Policy"
     content="default-src 'none'; style-src 'unsafe-inline'; script-src 'none'; connect-src 'none'; img-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
   >
-  <title>rapp-estate — candidate quarantine status</title>
+  <title>rapp-estate — publication status</title>
   <meta
     name="description"
-    content="Candidate fail-closed status for kody-w/rapp-estate. Deployment to main and Pages is not yet verified."
+    content="Publication status for kody-w/rapp-estate: the distributed Hive activation is drafted, nothing is signed, and network acceptance awaits the estate owner's signed registry."
   >
   <style>
     :root {
@@ -80,27 +80,53 @@
 <body>
   <div role="main">
     <h1>rapp-estate</h1>
-    <p class="muted">Candidate deterministic public status surface</p>
+    <p class="muted">kody-w's public estate: publication status on 2026-09-26</p>
 
     <div class="banner" aria-labelledby="status-heading">
-      <h2 id="status-heading">Candidate quarantine — not deployed</h2>
+      <h2 id="status-heading">Drafted — nothing is signed</h2>
       <p>
-        <strong>This branch does not prove that the live site is remediated.</strong>
-        Remote <code>main</code> and GitHub Pages still serve the baseline until
-        the reviewed candidate is published and verified.
+        <strong>The publication is drafted.</strong> The estate kit writes the
+        distributed Hive activation on the branch
+        <code>experimental/rapp1-distributed-hive</code>, one commit per step
+        (the estate inventory (this step), the beacon, the release manifests and the LTS pins),
+        following RAPP proposal 0020, a draft that the owner has not accepted.
+        The branch is experimental: it has no pull request and nothing on it is
+        merged.
       </p>
       <p>
-        The <strong>quarantine takes effect only when</strong> a reviewed commit
-        containing these bytes reaches <code>main</code> and byte-matching
-        responses are verified from both raw GitHub and GitHub Pages.
+        <strong>Nothing is signed.</strong> Network acceptance
+        <strong>awaits the owner's signed registry</strong>: registry_seq 3 of
+        the kody-w estate registry, which the estate kit prepares and only the
+        estate owner can sign.
       </p>
       <p>
-        Baseline identity claims were provisional and lacked the owner-signed
-        re-anchor and authenticated registry evidence required by the pinned
-        RAPP/1 authority. This candidate removes them rather than converting,
-        re-minting, or inferring them.
+        Before this draft, <code>main</code> was the 2026-07-17 quarantine
+        status, and it was live: on 2026-09-25 raw GitHub and GitHub Pages
+        served it byte for byte.
       </p>
     </div>
+
+    <h2>Estate inventory (drafted)</h2>
+    <p>
+      <a href="estate.json">estate.json</a> is a <code>rapp-estate/1.1</code>
+      inventory. Its owner is the estate-owner trust anchor
+      <code>rappid:@kody-w/estate-owner:b5814e45…c122</code>. It lists 30 doors,
+      each exactly <code>{rappid, added_at, via}</code>, and, in the
+      <code>hives</code> field that proposal 0020 proposes, one Hive root: the
+      RAPP Hive's public copy <code>kody-w/rapp-hive-public</code> at commit
+      <code>eafa6de</code>, pinned by the hash of its
+      <a href="https://github.com/kody-w/rapp-hive-public/blob/eafa6de7e04a3d536c21976c1d85e845a499cd7b/PUBLISHED.md">PUBLISHED.md</a>.
+    </p>
+
+    <h2>What the owner does</h2>
+    <ol>
+      <li>Re-verify the private-estate commitment with RAPP's own tool.</li>
+      <li>Sign and publish registry_seq 3, with a <code>release-pin</code> entry for each manifest and a <code>grail-kernel</code> entry for each release scope; its release pins then cover the beacon.</li>
+      <li>Accept or refuse RAPP proposal 0020 (decisions D2 and D3). If it is refused or decided otherwise, this branch is redrafted before any merge.</li>
+      <li>Have the estate kit record registry_seq 3 and that decision in one status commit.</li>
+      <li>Merge the branch into <code>main</code> without rewriting it, so every commit-pinned URL stays reachable.</li>
+      <li>In <code>kody-w/RAPP</code>, merge the seed's beacon pin and the operator's acceptance: registry_seq 3 now covers the beacon.</li>
+    </ol>
 
     <h2>Exact authority</h2>
     <div class="grid">
@@ -126,47 +152,29 @@
       (<code>41952</code> bytes).
     </p>
 
-    <h2>Candidate claims</h2>
+    <h2>Status and evidence</h2>
     <ul>
-      <li>Identity: none accepted or emitted.</li>
-      <li>Estate ownership and membership: none accepted or emitted.</li>
-      <li>Frames and wire endpoints: none accepted or emitted.</li>
-      <li>Authenticated registry: absent.</li>
-      <li>Client-side rendering: none; this page has no script or external asset.</li>
-    </ul>
-
-    <h2>Machine-readable status and evidence</h2>
-    <ul>
-      <li><a href="estate.json">Estate publication status</a></li>
-      <li><a href=".well-known/rapp-network.json">Discovery publication status</a></li>
+      <li><a href="RAPP1_STATUS.md">Full status, then the historical record</a></li>
+      <li><a href="RAPP1_OWNER_ACTIONS.json">Owner action ledger with null owner inputs</a></li>
       <li><a href="RAPP1_AUTHORITY.json">Exact authority pin</a></li>
-      <li><a href="RAPP1_EVIDENCE.json">Non-authoritative lookup evidence</a></li>
-      <li><a href="RAPP1_OWNER_ACTIONS.json">Owner action ledger with null inputs</a></li>
-      <li><a href="RAPP1_STATUS.md">Full audit status</a></li>
-      <li><a href="METROPOLIS.md">Candidate metropolis retirement notice</a></li>
+      <li><a href="RAPP1_EVIDENCE.json">Non-authoritative 2026-07-17 lookup evidence</a></li>
+      <li><a href="METROPOLIS.md">Metropolis retirement notice</a></li>
     </ul>
 
-    <h2>Role and owner action</h2>
+    <h2>History: the 2026-07-17 quarantine</h2>
     <p>
-      This repository does not route. If this static status is treated as a
-      mirror, it is subordinate to <code>kody-w/RAPP</code> under RAPP/1
-      section 11 and may mirror only provenance-stamped, hash-matching bytes.
-    </p>
-    <p>
-      The estate owner must either retire each historical claim or provide the
-      required identity authorization, out-of-band anchor, authenticated
-      registry, sequence, signature, and freshness policy. Every owner-only
-      input remains <code>null</code>.
-    </p>
-    <p>
-      The Parent/release coordinator must complete the
-      <a href="RAPP1_STATUS.md#live-deployment-verification-checklist">live deployment verification checklist</a>
-      before closing. The live deployment commit and verification UTC are not
-      yet recorded.
+      The 2026-07-17 audit replaced the estate's earlier publication with a
+      fail-closed quarantine status. The baseline's 18 provisional identifier
+      occurrences (17 distinct
+      lookups) were removed rather than converted, re-minted or inferred,
+      because no owner-signed re-anchor record or authenticated registry
+      existed. The audit, its
+      <a href="RAPP1_STATUS.md#live-deployment-verification-checklist">deployment checklist</a>
+      and its evidence are kept, as written, in the historical record.
     </p>
 
     <div class="footer">
-      Candidate status date: 2026-07-17. Live baseline at review time:
+      Status date: 2026-09-26. Pre-quarantine baseline:
       <a href="https://github.com/kody-w/rapp-estate/tree/24c8fdc1e770c790b98724002d719d515d5e5465"><code>24c8fdc1e770c790b98724002d719d515d5e5465</code></a>.
       A moving branch is not provenance; resolve and pin the serving commit
       before citing these bytes.

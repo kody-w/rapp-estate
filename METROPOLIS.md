@@ -1,5 +1,11 @@
 # `METROPOLIS.md` — candidate retirement notice (not yet live)
 
+> **Note of 2026-09-25.** On 2026-09-25 raw GitHub at `main` and GitHub
+> Pages served this notice exactly as written below, without this note (see
+> [`RAPP1_STATUS.md`](RAPP1_STATUS.md)). It is kept as `main` carried it at
+> `acc17dc` and covers only this path; the distributed Hive activation
+> drafted in this repository is described in `RAPP1_STATUS.md`.
+
 This candidate changes this path to a fail-closed retirement notice. It does
 **not** prove that the live `main`/Pages path has changed and does not publish
 a protocol, estate map, network beacon, registry, frame format, wire, or

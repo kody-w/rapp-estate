@@ -1,71 +1,170 @@
 {
-  "document_type": "rapp-estate-publication-status",
-  "accepted_as_estate_manifest": false,
-  "disposition": "candidate-quarantine",
-  "repository": "kody-w/rapp-estate",
-  "audit_date": "2026-07-17",
-  "baseline": {
-    "commit": "24c8fdc1e770c790b98724002d719d515d5e5465",
-    "tracked_files": 5,
-    "archives": 0
+  "schema": "rapp-estate/1.1",
+  "owner": {
+    "rappid": "rappid:@kody-w/estate-owner:b5814e45e9988df835dfd58d152a6fb05b6510a087a35c24374a1c4ab833c122",
+    "github": "kody-w"
   },
-  "authority": {
-    "repository": "kody-w/rapp-1",
-    "commit": "d2cd5abed48d3f52b86bbb975ac3558286d1db41",
-    "spec_path": "SPEC.md",
-    "spec_status": "Draft standard for ratification",
-    "raw_url": "https://raw.githubusercontent.com/kody-w/rapp-1/d2cd5abed48d3f52b86bbb975ac3558286d1db41/SPEC.md",
-    "bytes": 41952,
-    "sha256": "cea7847f98f9751734995f46fd4e1bde211c8eb9d03dbbb477934213865bb91a"
-  },
-  "historical_claims": {
-    "availability": "git-history-only",
-    "baseline_estate_identity_occurrences": 17,
-    "baseline_beacon_identity_occurrences": 1,
-    "baseline_total_provisional_emitted_occurrences": 18,
-    "distinct_baseline_identity_lookups": 17,
-    "baseline_created_entries": 16,
-    "baseline_membership_entries": 0,
-    "public_lookups_resolved": 16,
-    "distinct_public_repositories_resolved": 15,
-    "non_public_or_unresolved_targets": 1
-  },
-  "candidate_claims": {
-    "estate_owner_rappid": null,
-    "identities": [],
-    "memberships": [],
-    "frames": [],
-    "wire_endpoints": [],
-    "authenticated_registry": null
-  },
-  "owner_action": {
-    "state": "external-action-required",
-    "file": "RAPP1_OWNER_ACTIONS.json",
-    "owner_decision": null,
-    "accepted_identity_set": null,
-    "registry_evidence": null
-  },
-  "evidence": {
-    "file": "RAPP1_EVIDENCE.json",
-    "authoritative": false,
-    "trust_promotion": false
-  },
-  "roles": {
-    "protocol_authority": false,
-    "router": false,
-    "mirror": "status-only",
-    "subordinate_to": "kody-w/RAPP"
-  },
-  "deployment": {
-    "state": "pending-review-publish-and-live-verification",
-    "quarantine_effective_only_when": "The quarantine takes effect only when a reviewed commit containing these bytes reaches main and byte-matching responses are verified from both raw GitHub and GitHub Pages.",
-    "live_deployment_verified": false,
-    "verified_commit": null,
-    "verified_at": null,
-    "checklist": "RAPP1_STATUS.md#live-deployment-verification-checklist"
-  },
-  "freshness": {
-    "moving_branch_is_provenance": false,
-    "consumer_requirement": "Resolve and pin the serving git commit before using this status as evidence."
-  }
+  "created": [
+    {
+      "rappid": "rappid:@kody-w/ant-farm:debc6e4ee769f3f5d8df56e274a7f9dfca8922dec6aa723acef5810d76de3a0a",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/dogg-canon:4b40d3ef7bf6590e699da4fe9f085783c0ff59e8ebf41c48778f47d24798ff1c",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/dogg-markets:61e7da27cbf6c340def386a9dadc6c11354c75c4702243597d5971074450c13c",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/dogg-planet:c9672aa97042af0016f65be8448c30e3c510ccbc26426af0470a5f4eab74ee89",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/echo-brainstem:16df01ceb939072e3732f5cf059b5b6d9cd227aa4dd040fd168536a2e3ba2e2d",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/heimdall:dd35328e3d58b5b6d27687a0d7bc9c5c4e4626e1899d75d8ea3311705e6f0ca6",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/lumen-brainstem:285ee836b1569ad02a8b96297f9af5197eb886d50ea82a00e71b7d0dab87487c",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/microsoft-se-team-neighborhood:768858de6d7820a7ca2650bf84f83526d2664461a2aa078ae7c9e31feff1fd20",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/pkstop-central-park-bandshell:b8d09ab6a91a777aafbaccf61aa5a766a26b7c1e17b55e4eccc193d10a4fa812",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/pkstop-national-mall:84425635346f3f792164275761c6e9e5e3d522e085a348c1c70b98080bc888b5",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/pkstop-pike-place-market:f6ebb932a36dbaf94dfac37fdf60b462dbea5961b75221937f72ced165923b8d",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/pkstop-santa-monica-pier:3507c2873698cebfa9f09e3f4022fe955256187349ef271fc7db663f6c7e2e32",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/pkstop-the-bean:c20c2fc2f8af29de32d6bdc1f1136c881b1dba1b9e9a4fe17d0ccbd8fb137511",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-body:817839d299ddfb173097c58a0434c5c1ef5cd2cd55086c46cfe728bf9bfeb657",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-brain:61e7639bb200762a633c91189b2a9499a14fd1fd500752b07aa906b26bca4fa5",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-brainstem:f56c68c1a09fab3174912b19b244269c2366e80cb8e610944cd5871d3564d5cf",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-commons:fea3bd6e80bbac79efc22c4c1185c276d1833925a037ce120330be35e2afc3c7",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-map:382422e0b322bec01c1f20af48a7f558e64c648f9dc82377fa5af14c8305d223",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-parity:e1bbb9efe9a6b228d5225018b64bd0af1d2bdd44ac45fa2b2002adf024e4922e",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-plant-smoke-20260505-233637:d71b8068a192c1050c3a032c207abda38dbbfd5fe0c97a6e564e8b85c20f86bd",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-specs:5c1265bc1259ab7e33c767d6c6494bd3c59211f717014b5ee08fc40be4239448",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-stack-cubby:8019c0b7a40f31c046796b7a30f55dfd3b4331d91875276dc5c572176ec19c83",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-test-neighbor:60aabdbd667e17ef1a6e924f69e06d6e421407242958116a8e6159c174fbd23d",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-work:ff9049d3eed47a575b653676f39baa41c5c8ec572a381bec873383b9f2a4e6b9",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp-workspace-manager:98439b87ffb132681bf9bbaa50c65f01bb29373a38ffd17c310119a05d9f5ee5",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/rapp:9a8f0a4b5a710e20f4d819a0f37d2a4c9f113b5e78fb3c29e70b54fff48a38f9",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/sim-art-collective:7a5ce04d504aba07c210f5edce4bf441c72c40599eef995ff99e6342833fe59f",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/sim-demo-twin:aacdf0d1a15c93e7b47c172cc2364bbbe220b7efa0d0b9f96691148b5132d621",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/tide-brainstem:1c34ba00e67f22d36516dd25bfcc9e7eafcc900fa92662717f82a85ae8ddd35c",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    },
+    {
+      "rappid": "rappid:@kody-w/wildhaven-ai-homes-twin:df9c3f1f4b09d000720e93be4248d44213025ba5f76bf1180dc5d1ba0b0efd36",
+      "added_at": "2026-09-25T18:16:15Z",
+      "via": "scan"
+    }
+  ],
+  "member": [],
+  "hives": [
+    {
+      "hive": "af02504304365b6d8b068553156b5e6d",
+      "name": "rapp-hive",
+      "root": "https://raw.githubusercontent.com/kody-w/rapp-hive-public/",
+      "commit": "eafa6de7e04a3d536c21976c1d85e845a499cd7b",
+      "published_sha256": "3deeab22ba4995558c1647c50e6545e9fb2f2bcd2df5f6b64600868b63083291"
+    }
+  ],
+  "updated_at": "2026-09-26T07:30:00Z"
 }

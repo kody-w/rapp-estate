@@ -53,6 +53,74 @@
           "assertion": "Any future public inventory states its non-protocol schema and semantics without redefining RAPP/1, and any Router/Mirror remains subordinate to kody-w/RAPP."
         }
       ]
+    },
+    {
+      "id": "rapp1-distributed-hive-activation",
+      "state": "open",
+      "drafted_on_branch": "experimental/rapp1-distributed-hive",
+      "why": "The distributed Hive activation is drafted in this repository, following RAPP proposal 0020 (a draft that the owner has not accepted; its Migration step 3): a rapp-estate/1.1 inventory with one hives[] entry (the beacon, the candidate release manifests and the prepared-unsigned LTS pins follow in the next commits of the branch). Nothing in it is signed. Network acceptance awaits the estate owner's signed registry: registry_seq 3 of the kody-w estate registry, which the estate kit prepares.",
+      "first_blocker_note": "Blocker rapp1-identity-authorization-and-registry is kept as written on 2026-07-17. Since then the estate-owner rappid has been published out of band (kody-w/rapp-1 README, RAPP/1 section 13.1) and the kody-w registry has reached signed registry_seq 2. Whether this activation closes that blocker is the owner's decision.",
+      "required_actions": [
+        {
+          "id": "verify-private-estate-commitment",
+          "action": "Run RAPP's tools/private_estate_init.py --handle kody-w --verify-commitment --online with a reviewed source binding and compare its computed_commitment with the beacon's private_estate_commitment, which is carried forward from the last published beacon. (Its matches field compares with the beacon on main, which carries no commitment until this branch is merged.) If they differ, or if the private estate's meta.json gives another private_door_count, the estate kit replaces the values, with their test, in new commits (a new beacon, new manifests that pin it), and the beacon is re-pinned in the RAPP seed. Only the owner can read the private estate."
+        },
+        {
+          "id": "sign-registry-seq-3",
+          "action": "Sign and publish registry_seq 3 of the kody-w estate registry (kody-w/rapp-map ecosystem-spec.json) with the estate-owner key, including the entries the release manifests need under RAPP/1 rev-17 section 13.5: one release-pin entry for each manifest_hash and one grail-kernel entry for each release scope, because both manifests carry a kernel component. Both manifests pin this repository at the beacon commit, so once registry_seq 3 verifies, a signed entry of the estate's registry covers the beacon (RAPP proposal 0020 D2). Only the estate owner can do this."
+        },
+        {
+          "id": "accept-proposal-0020",
+          "action": "Accept RAPP proposal 0020 (a draft on kody-w/RAPP experimental/proposal-0020-distributed-hive) with its decisions D2 and D3, or refuse it, before this branch is merged: this draft is its Migration step 3. If the owner refuses it or chooses other decisions, this branch is not merged as drafted: the estate kit redrafts the affected files in new commits, re-pins them and updates the tests. This draft adds no beacon field; it does not use the estate_sha256 field that D3 lists as an alternative."
+        },
+        {
+          "id": "record-post-signing-status",
+          "action": "After registry_seq 3 is published and proposal 0020 is decided, have the estate kit add one status commit to this branch that records them (status words, owner inputs, tests) without changing any pinned file, so that main never states an older status than the truth."
+        },
+        {
+          "id": "merge-without-rewriting",
+          "action": "Only after proposal 0020 is accepted with the recommended D2 and D3 and the status commit is added, merge experimental/rapp1-distributed-hive into main by fast-forward or a merge commit, never a squash or a rebase, so that every commit-pinned URL stays reachable from main. Keep the branch until it is merged."
+        },
+        {
+          "id": "accept-in-rapp-seed",
+          "action": "In kody-w/RAPP, merge the draft branch experimental/rapp1-network-seed-acceptance after this branch is merged: its first commit pins this beacon in .well-known/rapp-network-seed.json; its second commit marks the operator accepted and is owner-gated: merge it only after registry_seq 3 is published and verifies, which is when a signed entry covers the beacon (proposal 0020 D2: each release-pin names a manifest that pins this repository at the beacon commit). If RAPP main has moved, the estate kit first rebases the branch and refreshes tests/fixtures/rapp1-doc-scope.json. The estate kit then prepares a last status commit, for the owner to merge, that closes this blocker."
+        }
+      ],
+      "owner_inputs": {
+        "decision": null,
+        "private_estate_commitment_computed": null,
+        "private_door_count_observed": null,
+        "registry_seq": null,
+        "registry_publication_commit": null,
+        "proposal_0020_decision": null,
+        "owner_decision_at": null
+      },
+      "acceptance_tests": [
+        {
+          "id": "private-commitment-verified",
+          "assertion": "The computed_commitment of the owner's run of RAPP's tools/private_estate_init.py --verify-commitment equals the beacon's private_estate_commitment."
+        },
+        {
+          "id": "release-pins-signed",
+          "assertion": "registry_seq 3 verifies from the out-of-band estate-owner anchor and carries one release-pin entry whose manifest_hash names each release manifest and the grail-kernel entry of each release scope, so that rapp_registry.verify_release_manifest accepts both manifests."
+        },
+        {
+          "id": "release-pins-cover-the-beacon",
+          "assertion": "Each release manifest that a signed release-pin names pins kody-w/rapp-estate at the commit of the beacon the RAPP seed pins, with that beacon's SHA-256, so a verified entry of the estate's signed registry covers the beacon (proposal 0020 D2)."
+        },
+        {
+          "id": "doors-bound-by-signed-manifests",
+          "assertion": "Every estate.json created[] rappid is a station's own valid rappid.json identity; a release manifest binds one as a door of record only where the station's card states it at the pinned commit, and none does yet; this draft accepts no identity in created[]."
+        },
+        {
+          "id": "status-matches-truth-on-merge",
+          "assertion": "Proposal 0020 is accepted with the recommended D2 and D3, and the commit merged into main states registry_seq 3 and that decision as they are; no status word on main is older than the truth."
+        },
+        {
+          "id": "pins-reachable-from-main",
+          "assertion": "Every commit-pinned URL into this repository resolves, from a commit reachable from main, to the bytes whose hash is recorded."
+        }
+      ]
     }
   ],
   "prohibited_substitutes": [
