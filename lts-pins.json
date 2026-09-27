@@ -2444,7 +2444,7 @@
       "superseded_by": null,
       "pointer_lts": "eebfa42dc8222a602d24d16c67e335955c6e7de2",
       "newest_commit": "eebfa42dc8222a602d24d16c67e335955c6e7de2",
-      "proposed_lts_commit": "6468f1db9340e3496aa3efac577dd53be6600b4b",
+      "proposed_lts_commit": "d9824feac92e1e7f0e859b834c9fd69d1a577741",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rapp-sentinel-hub": {
@@ -4008,7 +4008,7 @@
       "newest_commit": "8e13905ef3e38a5c31efeb6539bf7e715c7bcf1b",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
-      "proposed_lts_commit": "b08351e273024962f046c435aa59180fd3a21b75",
+      "proposed_lts_commit": "df1fa3d51886b83e0c57280631c0ec311c1ba8f5",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/double-jump": {
@@ -5160,7 +5160,7 @@
       "newest_commit": "0a3f1458021dbba12d975468d438a679cc7d492e",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
-      "proposed_lts_commit": "e5260ad0183537a25aa1e65b481a2df0b038a83d",
+      "proposed_lts_commit": "912a31464dc8ae5968686e64c7152c2c8d1429ea",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/rappterbook-engine-test": {
@@ -5607,7 +5607,7 @@
         "health_detail": "1 GitHub Actions run(s) green"
       },
       "kody-w/dogg": {
-        "commit": "b08351e273024962f046c435aa59180fd3a21b75",
+        "commit": "df1fa3d51886b83e0c57280631c0ec311c1ba8f5",
         "card_path": ".rapp/member.md",
         "source": "default branch HEAD, validated .rapp/member.md",
         "health": "green",
@@ -6559,7 +6559,7 @@
         "health_detail": "1 GitHub Actions run(s) green"
       },
       "kody-w/rapp-sentinel": {
-        "commit": "6468f1db9340e3496aa3efac577dd53be6600b4b",
+        "commit": "d9824feac92e1e7f0e859b834c9fd69d1a577741",
         "card_path": ".rapp/member.md",
         "source": "default branch HEAD, validated .rapp/member.md",
         "health": "green",
@@ -6951,11 +6951,11 @@
         "health_detail": "1 GitHub Actions run(s) green"
       },
       "kody-w/rappterbook": {
-        "commit": "e5260ad0183537a25aa1e65b481a2df0b038a83d",
+        "commit": "912a31464dc8ae5968686e64c7152c2c8d1429ea",
         "card_path": ".rapp/member.md",
         "source": "default branch HEAD, validated .rapp/member.md",
         "health": "green",
-        "health_detail": "2 GitHub Actions run(s) green"
+        "health_detail": "1 GitHub Actions run(s) green"
       },
       "kody-w/rappterbook-agent": {
         "commit": "832de426469b5b781468740f3a74a8c23177df20",
