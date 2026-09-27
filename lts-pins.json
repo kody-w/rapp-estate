@@ -4970,7 +4970,7 @@
       "newest_commit": "398c0fb247056c5653565d2fd8edf75bd1aeb4ce",
       "rappid_json": null,
       "reason": "portfolio status 'not yet' (verdict DRIFT): only certified stations enter the LTS; experiments live in the newest channel until they graduate",
-      "proposed_lts_commit": "6b9e4a4dfd43976a7fe5b9502fbcb3cf46282213",
+      "proposed_lts_commit": "bc2bbd6fdfa16084deaf97ecd581a081c75a667f",
       "proposed_lts_card": ".rapp/member.md"
     },
     "kody-w/red-binder": {
@@ -5184,7 +5184,7 @@
         "source": "gh main, validated .rapp/member.md"
       },
       "kody-w/RAR": {
-        "commit": "6b9e4a4dfd43976a7fe5b9502fbcb3cf46282213",
+        "commit": "bc2bbd6fdfa16084deaf97ecd581a081c75a667f",
         "card_path": ".rapp/member.md",
         "source": "gh main, validated .rapp/member.md"
       }
